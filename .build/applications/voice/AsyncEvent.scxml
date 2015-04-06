@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Created by Exporter version 1.0 at 2015-04-06 09:45:32.012 GMT-4--><!--Note: Components marked as 'debug' have been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+<!--Created by Exporter version 1.0 at 2015-04-06 13:36:02.516 GMT-4--><!--Note: Components marked as 'debug' have been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
        xmlns:jms="http://www.intervoice.com/sce/action/jms"
        xmlns:mim="http://www.intervoice.com/sce/action/mim"
        xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
@@ -307,7 +307,7 @@
       <state id="subroutineCall_yugrex">
          <datamodel>
             <data name="intv_subName"
-                  expr="'/resource/libRocheRSN_WebservicesClarify/subroutines/process/_setEndpoint.diagram'"/>
+                  expr="'/resource/libRocheRSN_ClarifyWS/subroutines/process/_setEndpoint.diagram'"/>
          </datamodel>
          <onentry>
             <icview:log text="action=entry, type=SubroutineCall, name=SetEndpointWeb, id=subroutineCall_yugrex, document=/RocheCAN/applications/voice/AsyncEvent.scxml">
@@ -349,7 +349,7 @@
                         nolog="true"/>
          </onexit>
          <invoke targettype="x-scxml-component"
-                 src="/libRocheRSN_WebservicesClarify/subroutines/process/_setEndpoint.scxml">
+                 src="/libRocheRSN_ClarifyWS/subroutines/process/_setEndpoint.scxml">
             <param name="endpoint" expr="_ws.endpointWS"/>
          </invoke>
          <transition event="subroutineCall_yugrex.invoke.done"/>
@@ -360,7 +360,7 @@
       <state id="subroutineCall_gogjah">
          <datamodel>
             <data name="intv_subName"
-                  expr="'/resource/libRocheRSN_WebservicesVDN/subroutines/process/_setEndpoint.diagram'"/>
+                  expr="'/resource/libRocheRSN_VDNWS/subroutines/process/_setEndpoint.diagram'"/>
          </datamodel>
          <onentry>
             <icview:log text="action=entry, type=SubroutineCall, name=SetEndpointWeb, id=subroutineCall_gogjah, document=/RocheCAN/applications/voice/AsyncEvent.scxml">
@@ -402,7 +402,7 @@
                         nolog="true"/>
          </onexit>
          <invoke targettype="x-scxml-component"
-                 src="/libRocheRSN_WebservicesVDN/subroutines/process/_setEndpoint.scxml">
+                 src="/libRocheRSN_VDNWS/subroutines/process/_setEndpoint.scxml">
             <param name="endpoint" expr="_ws.endpointVDNWS"/>
          </invoke>
          <transition event="subroutineCall_gogjah.invoke.done"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Created by Exporter version 1.0 at 2015-04-06 09:45:30.954 GMT-4--><!--Note: Components marked as 'debug' have been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+<!--Created by Exporter version 1.0 at 2015-04-06 13:38:33.703 GMT-4--><!--Note: Components marked as 'debug' have been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
        xmlns:jms="http://www.intervoice.com/sce/action/jms"
        xmlns:mim="http://www.intervoice.com/sce/action/mim"
        xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
@@ -148,7 +148,7 @@
       <state id="subroutineCall_dukhev">
          <datamodel>
             <data name="intv_subName"
-                  expr="'/resource/libRocheRSN_WebservicesVDN/subroutines/process/vDNRoutingLookup.diagram'"/>
+                  expr="'/resource/libRocheRSN_VDNWS/subroutines/process/vDNRoutingLookup.diagram'"/>
          </datamodel>
          <onentry>
             <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_dukhev, document=/RocheCAN/applications/voice/VB_RP9050_TransferMessages.scxml">
@@ -195,7 +195,7 @@
                         nolog="true"/>
          </onexit>
          <invoke targettype="x-scxml-component"
-                 src="/libRocheRSN_WebservicesVDN/subroutines/process/vDNRoutingLookup.scxml">
+                 src="/libRocheRSN_VDNWS/subroutines/process/vDNRoutingLookup.scxml">
             <param name="literatureFlag" expr="'N'"/>
             <param name="accountNumber" expr="_ws.accountNumber"/>
             <param name="instrumentName" expr="_ws.instrumentName"/>

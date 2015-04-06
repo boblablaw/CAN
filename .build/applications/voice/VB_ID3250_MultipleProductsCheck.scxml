@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Created by Exporter version 1.0 at 2015-04-06 09:45:31.825 GMT-4--><!--Note: Components marked as 'debug' have been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+<!--Created by Exporter version 1.0 at 2015-04-06 13:36:40.138 GMT-4--><!--Note: Components marked as 'debug' have been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
        xmlns:jms="http://www.intervoice.com/sce/action/jms"
        xmlns:mim="http://www.intervoice.com/sce/action/mim"
        xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
@@ -86,12 +86,12 @@
       <state id="subroutineCall_madjov">
          <datamodel>
             <data name="intv_subName"
-                  expr="'/resource/libRocheRSN_WebservicesClarify/subroutines/process/serialLookup.diagram'"/>
+                  expr="'/resource/libRocheRSN_ClarifyWS/subroutines/process/serialLookup.diagram'"/>
          </datamodel>
          <onentry>
             <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_madjov, document=/RocheCAN/applications/voice/VB_ID3250_MultipleProductsCheck.scxml">
-               <icview:param name="serialNumber1" expr="_ws.serialNumber"/>
-               <icview:param name="instanceName2" expr="'CAN'"/>
+               <icview:param name="serialNumber0" expr="_ws.serialNumber"/>
+               <icview:param name="instanceName1" expr="'CAN'"/>
             </icview:log>
             <assign location="intv_eventName" expr="undefined"/>
             <scripting:script><![CDATA[
@@ -129,9 +129,9 @@
                         nolog="true"/>
          </onexit>
          <invoke targettype="x-scxml-component"
-                 src="/libRocheRSN_WebservicesClarify/subroutines/process/serialLookup.scxml">
-            <param name="serialNumber1" expr="_ws.serialNumber"/>
-            <param name="instanceName2" expr="'CAN'"/>
+                 src="/libRocheRSN_ClarifyWS/subroutines/process/serialLookup.scxml">
+            <param name="serialNumber0" expr="_ws.serialNumber"/>
+            <param name="instanceName1" expr="'CAN'"/>
          </invoke>
          <transition event="subroutineCall_madjov.invoke.done"/>
          <transition event="success" target="script_simyej">

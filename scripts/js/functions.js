@@ -195,17 +195,3 @@ _ws.log = function(tag, msg) {
 		_intv_USERLOG_INFO(tag + msg);
 	}
 }
-
-//Default server
-
-_ws.defaultServer = function(host){
-	var appStartURL='';
-	if (host == 'ridms519'){
-		appStartURL = 'http://RIDMS519:8080/';
-	}else if (host == 'ridms108'){
-		appStartURL = 'http://RIDMS108:8080/';
-	}else if (host == 'ridms111'){
-		appStartURL = 'http://RIDMS111:8080/';
-	}else {appStartURL = 'http://RIDMS519:8080/'}
-	return appStartURL;
-}
