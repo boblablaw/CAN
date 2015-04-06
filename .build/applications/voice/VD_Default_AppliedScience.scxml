@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Exporter version 1.0 at 2015-04-06 09:45:30.937 GMT-4--><!--Note: Components marked as 'debug' have been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+       xmlns:jms="http://www.intervoice.com/sce/action/jms"
+       xmlns:mim="http://www.intervoice.com/sce/action/mim"
+       xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:process="http://www.intervoice.com/sce/action/process"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:gtfns="http://www.intervoice.com/gtfns/1.0"
+       xmlns="http://www.w3.org/2007/02/scxml"
+       xmlns:icxml="http://www.intervoice.com/icxml"
+       xmlns:xmi="http://www.omg.org/XMI"
+       xmlns:intv="http://www.intervoice.com/scxml"
+       xmlns:vca="http://www.intervoice.com/sce/action/vca"
+       xmlns:ex="http://www.intervoice.com/exporter"
+       initialstate="documentEntry"
+       intv:worksheetscope="applications/voice/Worksheet.ws"
+       version="1.0">
+   <state id="documentEntry">
+      <initial>
+         <transition target="documentEntry_doLocalInit"/>
+      </initial>
+      <state id="documentEntry_doLocalInit">
+         <onentry>
+            <assign location="intv_appType" expr="undefined"/>
+            <rdotype:get xmlns:rdotype="http://www.intervoice.com/sce/action/rdotype"
+                         location="intv_appType"/>
+            <if cond="intv_appType == 'vca'">
+               <assign location="intv_appType" expr="'voice'"/>
+               <elseif cond="intv_appType == 'ccxml'"/>
+               <assign location="intv_appType" expr="'call'"/>
+               <elseif cond="intv_appType == 'UNKNOWN'"/>
+               <assign location="intv_appType" expr="'process'"/>
+            </if>
+         </onentry>
+         <transition target="documentEntry_initialize"/>
+      </state>
+      <state id="documentEntry_initialize">
+         <initial>
+            <transition target="getInitializeStatus_documentEntry_initialize"/>
+         </initial>
+         <datamodel>
+            <data name="src" expr="null"/>
+         </datamodel>
+         <state id="getInitializeStatus_documentEntry_initialize">
+            <transition cond="_ws.intv_isInitialized == undefined"
+                        target="doInitialize_documentEntry_initialize">
+               <assign location="_ws.intv_isInitialized" expr="true"/>
+            </transition>
+            <transition cond="true" target="voiceBegin_tabsij"/>
+         </state>
+         <state id="doInitialize_documentEntry_initialize">
+            <onentry>
+               <assign location="_ws.intv_libraryList" expr="new Array();"/>
+               <assign location="_ws.intv_librarySize" expr="0;"/>
+               <assign location="src" expr="'/applications/' + 'voice' + '/AsyncEvent.scxml'"/>
+               <assign location="intv_eventName" expr="'Initialize'"/>
+               <assign location="intv_eventData" expr="undefined"/>
+            </onentry>
+            <invoke targettype="x-scxml-component" srcexpr="src">
+               <param name="intv_eventName"/>
+               <param name="intv_eventData"/>
+            </invoke>
+            <transition event="doInitialize_documentEntry_initialize.invoke.done"
+                        target="voiceBegin_tabsij"/>
+         </state>
+      </state>
+      <state id="terminatingEventHandler">
+         <onentry>
+            <if cond="intv_eventName == undefined">
+               <assign location="intv_eventName" expr="'unhandled'"/>
+            </if>
+            <if cond="intv_eventName == null">
+               <assign location="intv_eventName" expr="'unhandled'"/>
+            </if>
+            <if cond="_ws.intv_terminatingHandlerSeen == undefined">
+               <assign location="_ws.intv_terminatingHandlerSeen" expr="new Array()"/>
+            </if>
+         </onentry>
+         <transition cond="_ws.intv_terminatingHandlerSeen[intv_eventName] == undefined &amp;&amp; intv_eventName == 'Catastrophic'"
+                     target="invokeTerminatingEventHandlerCatastropic">
+            <assign location="_ws.intv_terminatingHandlerSeen[intv_eventName]" expr="true"/>
+         </transition>
+         <transition cond="_ws.intv_terminatingHandlerSeen[intv_eventName] == undefined"
+                     target="invokeTerminatingEventHandler">
+            <assign location="_ws.intv_terminatingHandlerSeen[intv_eventName]" expr="true"/>
+         </transition>
+         <transition cond="true" target="documentExit">
+            <log label="'core:root'"
+                 expr="'DOC-STOP: A recursive ' + intv_eventName + ' event is detected; ending document execution immediately: ' + '/RocheCAN/applications/voice/VD_Default_AppliedScience.icxml'"/>
+         </transition>
+      </state>
+      <state id="invokeTerminatingEventHandlerCatastropic">
+         <invoke targettype="x-scxml-component" src="/applications/voice/AsyncEvent.scxml">
+            <param name="intv_eventName"/>
+            <param name="intv_eventData"/>
+         </invoke>
+         <transition event="invokeTerminatingEventHandlerCatastropic.invoke.done"
+                     cond="icsession.getProperty('intv_enableHangupAfterCatastrophic') != true"
+                     target="documentExit"/>
+         <transition event="invokeTerminatingEventHandlerCatastropic.invoke.done"
+                     target="terminatingEventHandler">
+            <assign location="intv_eventName" expr="'Hangup'"/>
+            <assign location="intv_eventData" expr="_eventdata"/>
+         </transition>
+      </state>
+      <state id="invokeTerminatingEventHandler">
+         <invoke targettype="x-scxml-component" src="/applications/voice/AsyncEvent.scxml">
+            <param name="intv_eventName"/>
+            <param name="intv_eventData"/>
+         </invoke>
+         <transition event="invokeTerminatingEventHandler.invoke.done"
+                     cond="icsession.getProperty('intv_enableHangupAfterCatastrophic') != true"
+                     target="documentExit"/>
+         <transition event="invokeTerminatingEventHandler.invoke.done"
+                     cond="intv_eventName == 'Hangup'"
+                     target="documentExit"/>
+         <transition event="invokeTerminatingEventHandler.invoke.done"
+                     target="terminatingEventHandler">
+            <assign location="intv_eventName" expr="'Hangup'"/>
+            <assign location="intv_eventData" expr="_eventdata"/>
+         </transition>
+      </state>
+      <transition event="vca:hangup" target="terminatingEventHandler">
+         <assign location="intv_eventName" expr="'Hangup'"/>
+         <assign location="intv_eventData" expr="_eventdata"/>
+      </transition>
+      <transition event="intv:gotoBlock" target="toFunctionalBlock">
+         <assign location="intv_eventName" expr="undefined"/>
+         <assign location="intv_eventData" expr="_eventdata"/>
+      </transition>
+      <state id="toFunctionalBlock">
+         <transition cond="intv_eventData.src == 'restart'" target="voiceBegin_tabsij"/>
+         <transition cond="true" target="invokeFunctionalBlock"/>
+      </state>
+      <state id="invokeFunctionalBlock">
+         <invoke targettype="x-scxml-component" srcexpr="intv_eventData.src"/>
+      </state>
+      <transition event="intv:remoteTerminate" target="terminatingEventHandler">
+         <assign location="intv_eventName" expr="'Hangup'"/>
+         <assign location="intv_eventData" expr="_eventdata"/>
+      </transition>
+      <transition event="error.*" target="terminatingEventHandler">
+         <assign location="intv_eventName" expr="'Catastrophic'"/>
+         <assign location="intv_eventData" expr="_eventdata"/>
+      </transition>
+      <datamodel><!--Variables from declaration block: _TAM9YCftEeOyOajvvR_JvQ--><data name="intv_appType" expr="undefined"/>
+         <data name="intv_eventName" expr="undefined"/>
+         <data name="intv_eventData" expr="undefined"/>
+         <data name="intv_noFieldsInitialized" expr="undefined"/>
+         <data name="intv_allFieldsInitialized" expr="undefined"/>
+         <data name="intv_atLeastOneSituationExecuted" expr="undefined"/>
+         <data name="intv_modalities" expr="undefined"/>
+      </datamodel>
+      <state id="voiceBegin_tabsij">
+         <onentry>
+            <icview:log text="action=entry, type=VoiceBegin, name=, id=voiceBegin_tabsij, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=VoiceBegin, name=, id=voiceBegin_tabsij, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="script_ciyjos">
+            <icview:log text="action=leg:default, type=VoiceBegin, name=, id=voiceBegin_tabsij, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"/>
+         </transition>
+      </state>
+      <state id="goToBlock_yemmob">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_AppStart.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_yemmob, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_yemmob, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="toFunctionalBlock">
+            <assign location="intv_eventData"
+                    expr="var source = new Object(); source.src = src; source;"/>
+         </transition>
+      </state>
+      <state id="script_ciyjos">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_ciyjos, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+_ws.appName = '';
+try {
+	_ws.appName = Packages.com.intervoice.scxml.runtime.model.ScriptSupport.getScxmlContext().getScxmlSession().getApplication().getName();
+} catch (e) {
+}
+]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_ciyjos, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="script_qolviv"/>
+      </state>
+      <state id="calc_vuvxak">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_vuvxak, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"/>
+            <assign location="_ws.primaryDNIS" expr="'39205'"/>
+            <assign location="_ws.Skip" expr="'True'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_vuvxak, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"
+                        nolog="true">
+               <icview:result name="_ws.primaryDNIS" expr="_ws.primaryDNIS"/>
+               <icview:result name="_ws.Skip" expr="_ws.Skip"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_lowbuv">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_lowbuv">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_lowbuv, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"/>
+            <log expr="'CAN Default Applied Science loaded,' + ' DNIS: ' + _ws.primaryDNIS"
+                 label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_lowbuv, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="goToBlock_yemmob">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_lowbuv, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"/>
+         </transition>
+      </state>
+      <state id="script_qolviv">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_qolviv, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/CheckPoint.js'"/>
+            <scripting:script srcexpr="'/scripts/js/GateKeeperMapMaker.js'"/>
+            <scripting:script srcexpr="'/scripts/js/GlobalOverrides.js'"/>
+            <scripting:script srcexpr="'/scripts/js/Globals.js'"/>
+            <scripting:script srcexpr="'/scripts/js/SIR.js'"/>
+            <scripting:script srcexpr="'/scripts/js/SIRic.js'"/>
+            <scripting:script srcexpr="'/scripts/js/Start_ACTION.js'"/>
+            <scripting:script srcexpr="'/scripts/js/Universals.js'"/>
+            <scripting:script srcexpr="'/scripts/js/functions.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_qolviv, document=/RocheCAN/applications/voice/VD_Default_AppliedScience.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="calc_vuvxak"/>
+      </state>
+   </state>
+   <final id="documentExit"/>
+</scxml>

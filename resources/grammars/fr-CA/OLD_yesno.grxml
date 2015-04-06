@@ -1,0 +1,194 @@
+<?xml version='1.0'?>
+<grammar xml:lang="fr-CA" version="1.0" root="root" mode="voice"
+	xmlns="http://www.w3.org/2001/06/grammar"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd">
+
+	<rule id="root" scope='public'>
+		<item>
+			<one-of>
+				<item><ruleref uri="#yesBasic"/></item>
+				<item><ruleref uri="#yesIDo"/></item>
+				<item><ruleref uri="#yesIWould"/></item>
+				<item><ruleref uri="#yesIAm"/></item>
+				<item><ruleref uri="#yesThanks"/></item>
+				<item><ruleref uri="#yesThatsRight"/></item>
+				<item><ruleref uri="#yesItIs"/></item>
+				
+				<item><ruleref uri="#noBasic"/></item>
+				<item><ruleref uri="#noIDont"/></item>
+				<item><ruleref uri="#noIWouldnt"/></item>
+				<item><ruleref uri="#noImNot"/></item>
+				<item><ruleref uri="#noThanks"/></item>
+				<item><ruleref uri="#noThatsWrong"/></item>
+				<item><ruleref uri="#noItIsnt"/></item>
+			</one-of>
+		</item>
+	</rule>
+
+	<!-- ### YES ################################################### -->
+	
+	<!-- basic yes variations-->
+	<rule id="yesBasic" scope="public">
+		<item>
+			<one-of>
+				<item>oui</item>
+				<item>oui oui</item>
+				<item>yeah</item>
+				<item>ouin</item>
+			</one-of>
+		</item>
+	</rule>
+
+	<!-- variations on "yes i do" -->
+	<rule id="yesIDo" scope="public">
+		<item>
+			<one-of>	
+				<item>oui j'veux </item>
+			</one-of>
+		</item>
+	</rule>
+
+	<!-- variations on "yes i would" -->
+	<rule id="yesIWould" scope="public">
+		<item>
+			<one-of>	
+				<item>oui j'voudrais</item>
+			</one-of>
+		</item>
+	</rule>
+
+	<!-- variations on "yes i am" -->
+	<rule id="yesIAm" scope="public">
+		<item>
+			<one-of>	
+				<item>oui</item>
+			</one-of>
+		</item>
+	</rule>
+			
+	<!-- variations on "yes thank you" -->
+	<rule id="yesThanks" scope="public">
+		<item>
+			<one-of>	
+				<item>oui merci</item>
+				<item>oui s'il vous plaît</item>
+			</one-of>
+		</item>
+	</rule>
+			
+	<!-- assertions of correctness -->
+	<rule id="yesThatsRight" scope="public">
+		<item>
+			<one-of>	
+				<item>c'est ça</item>
+				<item>oui c'est ça</item>
+				<item>correct</item>
+				<item>c'correct</item>
+				<item>c'est correct</item>
+				<item>oui c'est correct</item>
+
+			</one-of>
+		</item>
+	</rule>
+
+	<!-- "right" - this is on its own because it should be 
+	added to grammars as sparingly as possible, since it can
+	cause recognition confusion -->
+	<rule id="right" scope="public">
+		<item>
+			<one-of>	
+				<item>correct</item>
+			</one-of>
+		</item>
+	</rule>
+	
+	<!-- explicit affirmation -->
+	<rule id="yesItIs" scope="public">
+		<item>
+			<one-of>	
+				<item>oui c'est ça</item>
+			</one-of>
+		</item>
+	</rule>
+	
+	
+	<!-- ### NO ################################################### -->
+	<!-- basic no variations -->
+	<rule id="noBasic" scope="public">
+		<item>
+			<one-of>	
+				<item>non</item>
+				<item>non non</item>
+
+			</one-of>
+		</item>
+	</rule>
+			
+	<!-- variations on "no i wouldn't" -->
+	<rule id="noIWouldnt" scope="public">
+		<item>
+			<one-of>	
+				<item>non j'veux pas</item>
+				<item>nnon je veux pas</item>
+			</one-of>
+		</item>
+	</rule>
+
+	<!-- variations on "no i don't" -->
+	<rule id="noIDont" scope="public">
+		<item>
+			<one-of>	
+				<item>non</item>
+
+			</one-of>
+		</item>
+	</rule>
+	
+	<!-- variations on "no i'm not" -->
+	<rule id="noImNot" scope="public">
+		<item>
+			<one-of>	
+				<item>non</item>
+
+			</one-of>
+		</item>
+	</rule>
+	
+	<!-- variations on "no thanks" -->
+	<rule id="noThanks" scope="public">
+		<item>
+			<one-of>	
+				<item>non merci</item>
+				<item>nah merci</item>
+
+			</one-of>
+		</item>
+	</rule>
+			
+	<!-- assertions of incorrectness -->
+	<rule id="noThatsWrong" scope="public">
+		<item>
+			<one-of>	
+				<item>incorrect</item>
+				<item>non c'est pas correct</item>
+				<item>non c'pas correct</item>
+				<item>non c'est pas ça</item>
+				<item>non c'pas ça</item>
+			</one-of>
+		</item>
+	</rule>
+	
+	<!-- explicit negation -->
+	<rule id="noItIsnt" scope="public">
+		<item>
+			<one-of>
+				<item>non c'est pas ça</item>
+				<item>non c'pas ça</item>	
+
+			</one-of>
+		</item>
+	</rule>
+
+</grammar>
+

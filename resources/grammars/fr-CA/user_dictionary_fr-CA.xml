@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<lexicon xml:lang="fr-CA" alphabet="application/sampa;localization=nuance">
+	<entry key="amplicor">
+		<definition value="a~plikOR" />
+		<definition value="amplIkOr" xml:lang="en-US"/>
+	</entry>
+	<entry key="amplilink">
+		<definition value="a~pliliNk" />
+		<definition value="ampl@lINk" xml:lang="en-US"/>
+		<definition value="amplIlINk" xml:lang="en-US"/>
+	</entry>
+	<entry key="amplichip">
+		<definition value="a~pliSip" />
+		<definition value="a~plitSip" />
+		<definition value="ampl@tSIp" xml:lang="en-US"/>
+		<definition value="amplItSIp" xml:lang="en-US"/>
+	</entry>
+	<entry key="ampliprep">
+		<definition value="a~plipRE:p" />
+		<definition value="amplIprep" xml:lang="en-US"/>
+	</entry>
+	<entry key="ampliscreen">
+		<definition value="a~pliskRin" />
+		<definition value="amplIskrin" xml:lang="en-US"/>
+	</entry>
+	<entry key="accutrend">
+		<definition value="akytREn" />
+		<definition value="akutREn" />
+		<definition value="akutREnd" />
+		<definition value="akytREnd" />
+		<definition value="@kjutrend" xml:lang="en-US"/>
+	</entry>
+	<entry key="accuchek">
+		<definition value="akySE:k" />
+		<definition value="akuSE:k" />
+		<definition value="akutSE:k" />
+		<definition value="akytSE:k" />
+		<definition value="akjutSek" xml:lang="en-US" />
+		<definition value="akj@tSek" xml:lang="en-US" />
+	</entry>
+	<entry key="accucheck">
+		<definition value="akySE:k" />
+		<definition value="akuSE:k" />
+		<definition value="akjutSek" xml:lang="en-US" />
+		<definition value="akj@tSek" xml:lang="en-US" />
+	</entry>
+	<entry key="lightcycler">
+		<definition value="lAjtsikleR" />
+		<definition value="lAjtsiklXr" />
+		<definition value="lAjtsikle" />
+		<definition value="laYtsaYkleR" />
+		<definition value="laYtsaYklXr" />
+		<definition value="laYtsaYkle" />
+		<definition value="lAYtsaYkl@r" xml:lang="en-US" />
+		<definition value="lAYtsaykler" xml:lang="en-US" />
+	</entry>
+	<entry key="hamilton">
+	    <definition value="amilt@n" />
+	    <definition value="amiltOn" />
+		<definition value="ham@ltIn" xml:lang="en-US"/>
+	</entry>
+	<entry key="pro">
+	    <definition value="pRo" />
+	    <definition value="pr\o" />
+	</entry>
+	<entry key="light">
+		<definition value="lAjt" />
+		<definition value="laYt" />
+		<definition value="lAYtsaYkl@r" xml:lang="en-US" />
+	</entry>
+	<entry key="flex">
+		<definition value="flEks" />
+		<definition value="fleks" xml:lang="en-US" />
+	</entry>
+	<entry key="plus">
+		<definition value="ply" />
+		<definition value="plys" />
+		<definition value="plyz" />
+		<definition value="plus" />
+		<definition value="pluz" />
+	</entry>
+	<entry key="inform">
+		<definition value="e~fORm" />
+		<definition value="InfOrm" xml:lang="en-US" />
+	</entry>
+	<entry key="middleware">
+	    <definition value="midlewAR" />
+		<definition value="mId@lwer" xml:lang="en-US" />
+	</entry> 
+	<entry key="perform">
+		<definition value="pE:RfORm" />
+		<definition value="p3:fOrm" xml:lang="en-US" />
+	</entry>
+	<entry key="performa">
+		<definition value="pERfORmA" />
+		<definition value="p3:fOrm@" xml:lang="en-US" />
+	</entry>
+	<entry key="cycler">
+		<definition value="sikleR" />
+		<definition value="siklXr" />
+		<definition value="sikle" />
+		<definition value="saYkleR" />
+		<definition value="saYklXr" />
+		<definition value="saYkle" />
+		<definition value="saYkl@r" xml:lang="en-US" />
+	</entry>
+	<entry key="magna">
+		<definition value="mAgnA" />
+		<definition value="magn@" xml:lang="en-US" />
+	</entry>
+	<entry key="lyzer">
+		<definition value="lizE:R" />
+		<definition value="lizXr" />
+		<definition value="laYzE:R" />
+		<definition value="laYzXr" />
+	</entry>
+	<entry key="magnalyzer">
+		<definition value="mAgnAlizE:R" />
+		<definition value="mAgnAlizXr" />
+		<definition value="mAgnAlaYzE:R" />
+		<definition value="mAgnAlaYzXr" />
+		<definition value="magn@laYz@r" xml:lang="en-US"/>
+		<definition value="magn@laYz3:" xml:lang="en-US"/>
+	</entry>
+	<entry key="magnapure">
+		<definition value="mAgnApyR" />
+		<definition value="mAgnApjuR" />
+		<definition value="magn@pjUr" xml:lang="en-US"/>
+	</entry>
+	<entry key="pure">
+		<definition value="pyR" />
+		<definition value="pjuR" />
+		<definition value="pjUr" xml:lang="en-US"/>
+	</entry>
+	<entry key="mira">
+		<definition value="miRA" />
+		<definition value="m3:@" xml:lang="en-US"/>
+		<definition value="mIr@" xml:lang="en-US"/>
+		<definition value="maYr@" xml:lang="en-US"/>
+		<definition value="mir@" xml:lang="en-US"/>
+	</entry>
+	<entry key="casy">
+		<definition value="kAsi" />
+		<definition value="kAzi" />
+		<definition value="kezi" />
+		<definition value="kesi" />
+		<definition value="keYsi" xml:lang="en-US"/>
+	</entry>
+	<entry key="plate">
+		<definition value="plat" />
+		<definition value="pleYt" xml:lang="en-US"/>
+	</entry>
+	<entry key="reader">
+		<definition value="Rid9R" />
+		<definition value="RidE:R" />
+		<definition value="RidXr" />
+		<definition value="ri43:" xml:lang="en-US"/>
+	</entry>
+	<entry key="washer">
+		<definition value="wAS9R" />
+		<definition value="wASE:R" />
+		<definition value="wASXr" />
+		<definition value="waS9R" />
+		<definition value="waSE:R" />
+		<definition value="waSXr" />
+		<definition value="wQS3:" xml:lang="en-US"/>
+		<definition value="wOS3:" xml:lang="en-US"/>
+	</entry>
+	<entry key="tek">
+		<definition value="tEk" />
+		<definition value="tek" xml:lang="en-US"/>
+	</entry>
+	<entry key="bio">
+		<definition value="bio" />
+		<definition value="baYo" />
+		<definition value="baY@W" xml:lang="en-US"/>
+	</entry>
+	<entry key="micro">
+		<definition value="maYkr\o" />
+		<definition value="mikRo" />
+		<definition value="maYkr@W" xml:lang="en-US"/>
+	</entry>
+	<entry key="microarray">
+		<definition value="mikRoARe" />
+		<definition value="mikRo9Re" />
+		<definition value="maYkRoARe" />
+		<definition value="maYkRo9Re" />
+		<definition value="mikr\oARe" />
+		<definition value="mikr\o9Re" />
+		<definition value="maYkr@W@reY" xml:lang="en-US"/>
+	</entry>
+	<entry key="dryer">
+		<definition value="dRAje" />
+		<definition value="dr\Aje" />
+		<definition value="dRaYje" />
+		<definition value="dr\aYje" />
+		<definition value="dRAjXr" />
+		<definition value="dr\AjXr" />
+		<definition value="dRaYjXr" />
+		<definition value="dr\aYjXr" />
+	</entry>
+	<entry key="array">
+		<definition value="ARe" />
+		<definition value="9Re" />
+		<definition value="3:eY" xml:lang="en-US"/>
+	</entry>
+	<entry key="eye">
+		<definition value="aY" xml:lang="en-US"/>
+	</entry>
+	<entry key="tee">
+		<definition value="tee" xml:lang="en-US"/>
+	</entry>
+	<entry key="unit">
+		<definition value="junit"/>
+		<definition value="yni"/>
+		<definition value="jun@t" xml:lang="en-US"/>
+		<definition value="junIt" xml:lang="en-US"/>
+	</entry>
+	<entry key="pack">
+		<definition value="pAk"/>
+		<definition value="pak" xml:lang="en-US"/>
+	</entry>
+	<entry key="base">
+		<definition value="bAs"/>
+		<definition value="bAz"/>
+		<definition value="bes"/>
+		<definition value="bez"/>
+		<definition value="beYs" xml:lang="en-US"/>
+	</entry>
+	<entry key="baseunit">
+		<definition value="bAsjunit"/>
+		<definition value="bAzjunit"/>
+		<definition value="besjunit"/>
+		<definition value="bezjunit"/>
+		<definition value="bAsynit"/>
+		<definition value="bAzynit"/>
+		<definition value="besynit"/>
+		<definition value="bezynit"/>
+		<definition value="beYsun@t" xml:lang="en-US"/>
+	</entry>
+	<entry key="opener">
+		<definition value="op@ne"/>
+		<definition value="Op@nE:R"/>
+		<definition value="Op@nXr"/>
+		<definition value="@Wp@n3:" xml:lang="en-US"/>
+	</entry>
+	<entry key="carousel">
+		<definition value="kARuzEl"/>
+		<definition value="ker@sel" xml:lang="en-US"/>
+		<definition value="kar@sel" xml:lang="en-US"/>
+	</entry>
+	<entry key="cobas">
+		<definition value="kObA"/>
+		<definition value="kObAs"/>
+		<definition value="kObas"/>
+		<definition value="kobA"/>
+		<definition value="kobAs"/>
+		<definition value="kobas"/>
+		<definition value="k@WbQs" xml:lang="en-US"/>
+		<definition value="k@Wbas" xml:lang="en-US"/>
+	</entry>
+	<entry key="analytics">
+		<definition value="an@litiks" />
+		<definition value="an@lI4Iks" xml:lang="en-US"/>
+	</entry>
+	<entry key="analyzer">
+		<definition value="AnAlizE:R" />
+		<definition value="AnAlizXr" />
+		<definition value="an@laYz@r" xml:lang="en-US"/>
+	</entry>
+	<entry key="criterion">
+		<definition value="kRit@Rjo~" />
+		<definition value="kraYtIriIn" xml:lang="en-US"/>
+	</entry> 
+	<entry key="captaq">
+		<definition value="kAptAk" />
+		<definition value="kaptak" xml:lang="en-US"/>
+	</entry> 
+	<entry key="chemstrip">
+		<definition value="S@mstRip" />
+		<definition value="kemstrIp" xml:lang="en-US"/>
+	</entry> 
+	<entry key="centrifuge">
+		<definition value="sa~tRifyZ" />
+		<definition value="s@ntRifyZ" />
+		<definition value="sentRifyZ" />
+		<definition value="sa~tr\ifyZ" />
+		<definition value="s@ntr\fyZ" />
+		<definition value="sentr\fyZ" />
+		<definition value="sa~tRifuZ" />
+		<definition value="s@ntRifuZ" />
+		<definition value="sentRifuZ" />
+		<definition value="sa~tr\ifuZ" />
+		<definition value="s@ntr\fuZ" />
+		<definition value="sentr\fuZ" />
+		<definition value="sentrIfjuZ" xml:lang="en-US"/>
+	</entry>
+	<entry key="diluter">
+		<definition value="dilyte" />
+		<definition value="dIlu4@r" xml:lang="en-US"/>
+	</entry> 
+	<entry key="elecsys">
+		<definition value="elE:kzi" />
+		<definition value="ilE:kzi" />
+		<definition value="ilE:kzis" />
+		<definition value="ilE:kzis" />
+		<definition value="ilekzis" />
+		<definition value="elE:kzi" />
+		<definition value="ilE:ksis" />
+		<definition value="ilE:ksis" />
+		<definition value="ileksis" />
+		<definition value="ilekses" />
+		<definition value="elekses" />
+		<definition value="IleksIs" xml:lang="en-US"/>
+	</entry> 
+	<entry key="firewall">
+		<definition value="fiRuwAl" />
+		<definition value="faY@rwQl" xml:lang="en-US"/>
+	</entry> 
+	<entry key="heraeus">
+		<definition value="AR2" />
+		<definition value="heriIs" xml:lang="en-US"/>
+	</entry> 
+	<entry key="hitachi">
+		<definition value="itaSi" />
+		<definition value="hItQtSi" xml:lang="en-US"/>
+	</entry> 
+	<entry key="idexx">
+		<definition value="idE:ksks" />
+		<definition value="aYdeks" xml:lang="en-US"/>
+	</entry> 
+	<entry key="integra">
+		<definition value="intEgRA" />
+		<definition value="Integr@" xml:lang="en-US"/>
+		<definition value="InteYgr@" xml:lang="en-US"/>
+	</entry> 
+	<entry key="interface">
+		<definition value="e~tERfas" />
+		<definition value="Int@rfeYs" xml:lang="en-US"/>
+	</entry> 
+	<entry key="Roche">
+		<definition value="ROS" />
+		<definition value="r@WS" xml:lang="en-US"/>
+	</entry>
+	<entry key="mod">
+		<definition value="mOd" />
+		<definition value="mQd" xml:lang="en-US"/>
+	</entry> 
+	<entry key="modular">
+		<definition value="mOdylAR" />
+		<definition value="mQdj@l@r" xml:lang="en-US"/>
+	</entry> 
+	<entry key="omni">
+		<definition value="Omni" />
+		<definition value="Qmni" xml:lang="en-US"/>
+	</entry> 
+	<entry key="omnilink">
+		<definition value="Omnilink" />
+		<definition value="QmniliNk" xml:lang="en-US"/>
+	</entry> 
+	<entry key="pipette">
+		<definition value="pipEt" />
+		<definition value="paYpet" xml:lang="en-US"/>
+	</entry> 
+	<entry key="pipetter">
+		<definition value="pipEte" />
+		<definition value="paYpet@r" xml:lang="en-US"/>
+	</entry> 
+	<entry key="miditron">
+		<definition value="miditRo~" />
+		<definition value="mIditrQn" xml:lang="en-US"/>
+	</entry>
+	<entry key="starlight">
+		<definition value="staRlaYt" />
+		<definition value="stQrlaYt" xml:lang="en-US"/>
+	</entry> 
+	<entry key="taqman">
+		<definition value="tAkmAn" />
+		<definition value="takman" xml:lang="en-US"/>
+	</entry> 
+	<entry key="tecan">
+		<definition value="tEka~" />
+		<definition value="tikan" xml:lang="en-US"/>
+	</entry> 
+	<entry key="urisys">
+		<definition value="yRizi" />
+		<definition value="yRizis" />
+		<definition value="juRizis" />
+		<definition value="juRisis" />
+		<definition value="yRisi" />
+		<definition value="yRisis" />
+		<definition value="yr\izi" />
+		<definition value="yr\izis" />
+		<definition value="jr\izis" />
+		<definition value="jr\isis" />
+		<definition value="yr\isi" />
+		<definition value="yr\isis" />
+		<definition value="j3:IsIs" xml:lang="en-US"/>
+	</entry>
+	<entry key="blood">
+		<definition value="blOd" />
+		<definition value="blVd" xml:lang="en-US"/>
+	</entry>
+	<entry key="screening">
+		<definition value="skR@niN" />
+		<definition value="skrinIN" xml:lang="en-US"/>
+	</entry>
+	<entry key="screen">
+		<definition value="skr\in" />
+		<definition value="skRin" />
+		<definition value="skrin" xml:lang="en-US"/>
+	</entry>
+	<entry key="hybridization">
+		<definition value="ibRidizAsjo~" />
+		<definition value="haYbr@4@zeYS@n" xml:lang="en-US"/>
+	</entry>
+	<entry key="west">
+		<definition value="wEst" />
+		<definition value="wes" xml:lang="en-US"/>
+		<definition value="west" xml:lang="en-US"/>
+	</entry>
+	<entry key="nile">
+		<definition value="nAjl" />
+		<definition value="nil" />
+		<definition value="naYl" />
+		<definition value="naYl" xml:lang="en-US"/>
+	</entry>
+	<entry key="virus">
+		<definition value="viRys" />
+		<definition value="vaYr\ys" />
+		<definition value="vIrus" xml:lang="en-US"/>
+		<definition value="vaYr@s" xml:lang="en-US"/>
+		<definition value="vaYrVs" xml:lang="en-US"/>
+	</entry>
+	<entry key="lc">
+		<definition value="Elsi" />
+		<definition value="Else" />
+	</entry>
+</lexicon>

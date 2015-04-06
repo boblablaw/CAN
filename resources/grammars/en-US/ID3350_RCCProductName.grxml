@@ -1,0 +1,1648 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="ID3400_ClinChemProductName grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_en-US.xml?SWI.type=backup"/>
+   <rule id="root" scope="public">
+      <one-of>
+         <item>
+            <one-of>
+               <item>seven one seven</item>
+               <item>seven seventeen</item>
+            </one-of>
+            <tag>CHOICE='717'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>nine oh two</item>
+               <item>hitachi nine oh two</item>
+               <item>h nine oh two</item>
+               <item>nine zero two</item>
+               <item>hitachi nine zero two</item>
+               <item>h nine oh two</item>
+            </one-of>
+            <tag>CHOICE='902'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>glucose meter</item>
+               <item>glucometer</item>
+            </one-of>
+            <tag>CHOICE='glucosemeter'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>nine eleven</item>
+               <item>hitachi nine eleven</item>
+               <item>h nine eleven</item>
+               <item>nine one one</item>
+               <item>h nine one one</item>
+               <item>hitachi nine one one</item>
+            </one-of>
+            <tag>CHOICE='911'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>nine twelve</item>
+               <item>hitachi nine twelve</item>
+               <item>h nine twelve</item>
+               <item>nine one two</item>
+               <item>h nine one two</item>
+               <item>hitachi nine one two</item>
+            </one-of>
+            <tag>CHOICE='912'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>nine seventeen rack</item>
+               <item>nine seventeen disk</item>
+               <item>h nine seventeen</item>
+               <item>nine seventeen</item>
+               <item>nine one seven</item>
+               <item>h nine one seven</item>
+               <item>hitachi nine one seven</item>
+            </one-of>
+            <tag>CHOICE='917rack'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>accucheck inform</item>
+               <item>inform</item>
+               <item>accucheck inform two</item>
+               <item>inform two</item>
+               <item>accucheck two</item>
+               <item weight="0.01">accucheck </item> <!-- tuning 2014 -->
+               <item>accucheck aviva</item> <!-- tuning 2014 -->
+               <item>aviva </item> <!-- tuning 2014 -->
+               <item>safe t pro plus </item> <!-- tuning 2014 -->
+               <item>safe t pro </item> <!-- tuning 2014 -->
+               <item>lancing device </item> <!-- tuning 2014 -->
+               <item> blood glucose meter </item> <!-- tuning 2014 -->
+            </one-of>
+            <item repeat="0-1"><!--tuning 2014 -->
+               <one-of><!--tuning 2014 -->
+                  <item> meter </item> <!--tuning 2014 -->
+                  <item> meters </item> <!--tuning 2014 -->
+                  <item> base unit </item> <!--tuning 2014 -->
+                  <item> glucometer </item> <!--tuning 2014 -->
+                  <item> blood glucose meter </item> <!--tuning 2014 -->
+                  <item> glucose meter </item> <!--tuning 2014 -->
+               </one-of><!--tuning 2014 -->
+            </item><!--tuning 2014 -->
+            <tag>CHOICE='accuchekinform'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>accucheck perform</item>
+               <item>perform</item>
+               <item>accucheck performa</item>
+               <item>performa</item>
+            </one-of>
+            <tag>CHOICE='accuchekperforma'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>accutrend</item>
+            </one-of>
+            <tag>CHOICE='accutrend'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>amplichip</item>
+            </one-of>
+            <tag>CHOICE='amplichip'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>ampliscreen</item>
+               <item>cobas ampliscreen</item>
+               <item>ampliscreen</item>
+            </one-of>
+            <tag>CHOICE='amplilinkampliscreen'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>b one two three</item>
+               <item>b one twenty three</item>
+               <item>cobas b one twenty three</item>
+            </one-of>
+            <tag>CHOICE='b123'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>base unit</item>
+            </one-of>
+            <tag>CHOICE='baseunit'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>b g e link</item>
+            </one-of>
+            <tag>CHOICE='bgelink'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>bio tek plate reader E L X eight hundred</item>
+               <item>E L X eight hundred</item>
+               <item>plate reader</item>
+               <item>bio tek plate reader E L X eight oh eight</item>
+               <item>bio tek plate reader E L X eight zero eight</item>
+               <item>bio tek plate reader E L X eight hundred eight</item>
+            </one-of>
+            <tag>CHOICE='biotekplatereaderelx800'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>bio tek plate washer E L X fifty</item>
+               <item>E L X fifty</item>
+               <item>plate washer</item>
+            </one-of>
+            <tag>CHOICE='biotekplatewasherelx50'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>blood gas</item>
+               <item>cobas blood gas</item>
+            </one-of>
+            <tag>CHOICE='bloodgas'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c one eleven</item>
+               <item>cobas c one eleven</item>
+               <item>c one one one</item>
+               <item>cobas c one one one</item> <!-- tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='c111'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c three eleven</item>
+               <item>cobas three eleven</item>
+               <item>cobas c three eleven</item>
+               <item>three eleven</item>
+               <item>c three one one</item>
+               <item>cobas c three one one</item>
+               <item>cobas three one one</item>
+            </one-of>
+            <tag>CHOICE='c311'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c five oh one</item>
+               <item>cobas c five oh one</item>
+               <item>cobas five oh one</item> <!-- tuning 2014 -->
+               <item>c five oh one</item>
+               <item>hitachi c five oh one</item>
+               <item>cobas c five zero one</item>
+               <item>the c five oh one</item>
+               <item>c five zero one</item>
+               <item>cobas five zero one</item>
+            </one-of>
+            <tag>CHOICE='c501'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c five oh two</item>
+               <item>cobas five oh two</item>
+               <item>a five zero two</item>
+               <item>cobas c five zero two</item>
+               <item>c five zero two</item>
+               <item>five zero two</item>
+            </one-of>
+            <tag>CHOICE='c502'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c six thousand</item>
+               <item>cobas six thousand</item>
+            </one-of>
+            <tag>CHOICE='cobas6000'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c seven oh one</item>
+               <item>cobas seven oh one</item>
+            </one-of>
+            <tag>CHOICE='c701'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas c seven zero two</item>
+               <item>c seven zero two</item>
+               <item>cobas c seven oh two</item>
+               <item>c seven oh two</item>
+               <item>seven zero two</item>
+               <item>seven oh two</item>
+            </one-of>
+            <tag>CHOICE='c702'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c seven one one</item>
+               <item>c seven eleven</item>
+               <item>cobas seven one one</item>
+               <item>cobas seven eleven</item>
+            </one-of>
+            <tag>CHOICE='c711'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c eight thousand</item>
+               <item>cobas eight thousand</item>
+               <item>eight thousand</item>
+               <item>cobas c eight thousand</item>
+               <item>cobas c eight zero zero zero</item>
+            </one-of>
+            <tag>CHOICE='c8000'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas p six thirty</item>
+               <item>cobas p six three zero</item>
+               <item>cobas p six three ho</item>
+               <item>p six thirty</item>
+               <item>p six three zero</item>
+               <item>p six three ho</item>
+               <item>cobas six thirty</item>
+               <item>cobas six three zero</item>
+               <item>cobas six three oh</item>
+               <item>docking station</item>
+               <item>docking station short</item>
+            </one-of>
+            <tag>CHOICE='captaq'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cardiac reader</item>
+            </one-of>
+            <tag>CHOICE='cardiacreader'</tag>
+         </item>
+         <item>
+            <one-of>
+	            <item>casy</item>
+	            <item>casy d t</item>
+	            <item>a v a</item>
+				<item>amplification</item>
+				<item>antibodies</item>
+				<item>apoptosis</item>
+				<item>b r d u</item>
+				<item>bioinformatics</item>
+				<item>birdew</item>
+				<item>blendzyme</item>
+				<item>c d n a</item>
+				<item>c d n a synthesis</item>
+				<item>c g h</item>
+				<item>c g s</item>
+				<item>capture</item>
+				<item>capture products</item>
+				<item>cell analysis</item>
+				<item>cell counting</item>
+				<item>cell death</item>
+				<item>cell proliferation</item>
+				<item>cellular</item>
+				<item>cellular reagents</item>
+				<item>chip</item>
+				<item>collagenase</item>
+				<item>complete</item>
+				<item>cyber green</item>
+				<item>d n a</item>
+				<item>dig</item>
+				<item>e m p c r</item>
+				<item>easy exome</item>
+				<item>elisa</item>
+				<item>enzymes</item>
+				<item>excelligence</item>
+				<item>expand</item>
+				<item>extremegene</item>
+				<item>faststart</item>
+				<item>faststart universal</item>
+				<item>fostop</item>
+				<item>fugene</item>
+				<item>gene expression</item>
+				<item>general moleculer</item>
+				<item>general purpose molecular biology reagents</item>
+				<item>genome</item>
+				<item>genotyping</item>
+				<item>h r m</item>
+				<item>high pure</item>
+				<item>histag</item>
+				<item>in seetu hybridization</item>
+				<item>inhibitor</item>
+				<item>junior</item>
+				<item>labeling</item>
+				<item>liberase</item>
+				<item>library</item>
+				<item>ligations</item>
+				<item>master mix</item>
+				<item>metagenomics</item>
+				<item>methylation</item>
+				<item>sequence capture products</item>
+				<item>molecular</item>
+				<item>newbler</item>
+				<item>northern blot</item>
+				<item>nucleic acid</item>
+				<item>nucleic acid purification</item>
+				<item>p c r</item>
+				<item>probes</item>
+				<item>quantification</item>
+				<item>real time p c r</item>
+				<item>resin</item>
+				<item>restriction enzymes</item>
+				<item>reverse transcription</item>
+				<item>seqcap</item>
+				<item>sequence capture</item>
+				<item>sequencing</item>
+				<item>signal map</item>
+				<item>southern blot</item>
+				<item>synthesis</item>
+				<item>tackman</item>
+				<item>transcriptor</item>
+				<item>translation</item>
+				<item>u p l</item>
+				<item>universal probe</item>
+				<item>universal probe library</item>
+            <!--<item>it's a reagent</item> tuning 2014 -->
+            <!--<item>reagent</item> tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='casydt'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>casy t t</item>
+            </one-of>
+            <tag>CHOICE='casytt'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>casy t t c</item>
+            </one-of>
+            <tag>CHOICE='casyttc'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cedex</item>
+            </one-of>
+            <tag>CHOICE='cedex'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cedex bio h t</item>
+            </one-of>
+            <tag>CHOICE='cedexbioht'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cedex hi res</item>
+            </one-of>
+            <tag>CHOICE='cedexhires'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cedex x s</item>
+            </one-of>
+            <tag>CHOICE='cedexxs'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cedex yeast</item>
+            </one-of>
+            <tag>CHOICE='cedexyeast'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>coagucheck x s</item>
+               <item>coagucheck</item>
+               <item>coagulation</item>
+               <item>coagucheck x_s</item> <!-- tuning 2014 -->
+               <!-- <item>coagucheck exces</item> tuning 20014 -->
+            </one-of>
+            <tag>CHOICE='coaguchekxs'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item> coagucheck x_s plus</item> <!-- tuning 2014 -->
+               <item> x_s plus </item> <!-- tuning 2014 -->
+               <item> coagucheck plus</item> <!-- tuning 2014 -->
+               <!--<item>exces plus</item> tuning 2014 -->
+               <!--<item>coagucheck exces plus</item> tuning 2014 -->
+               <!--<item>coagucheck exces plews</item> tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='coaguchekxsplus'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>coagucheck x_s pro</item> 
+               <!-- <item>coagucheck exces pro</item> tuning 2014 -->
+               <!-- <item>coagucheck</item> tuning 2014 -->
+               <item>x_s pro</item>
+               <!--<item>exces pro</item> tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='coaguchekxspro'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas forty eight hundred</item>
+               <item>forty eight hundred</item>
+               <item>four eighty z</item>
+               <item>four eighty x</item>
+               <item>z four eighty z</item>
+               <item>x four eighty x</item>
+               <item>cobas taqman forty eight</item>
+               <item>cobas forty eight zero</item>
+               <item>cobas x four eight zero</item>
+               <item>cobas x four eighty</item>
+               <item>cobas z four eight zero</item>
+               <item>cobas z four eighty</item>
+               <item>x four eight zero</item>
+               <item>z four eight zero</item>
+               <item>x four eighty</item>
+               <item>cobas x</item>
+               <item>cobas z</item>
+               <item>cobas z four eighty</item>
+               <item>z four eighty</item>
+               <item>cobas z four eight zero zero</item>
+               <item>z four eight zero zero</item>
+               <item>cobas z four eight oh oh</item>
+               <item>z four eight oh oh</item>
+               <item>cobas four eighty</item>
+               <item>cobas four eight zero</item>
+            </one-of>
+            <tag>CHOICE='cobas4800'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c six thousand</item>
+               <item>cobas six thousand</item>
+               <item>six thousand</item>
+               <item>roche six thousand</item>
+               <item>c o b a s six thousand</item>
+               <item>six thousand</item>
+               <item>the cobas six thousand</item>
+            </one-of>
+            <tag>CHOICE='cobas6000'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas</item>
+               <item>co boss</item>
+            </one-of>
+            <tag>CHOICE='cobas'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas eighty one hundred</item>
+               <item>cobas eight one zero zero</item>
+               <item>cobas eight one oh oh</item>
+            </one-of>
+            <tag>CHOICE='cobas8100'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas academy</item>
+               <item>academy</item>
+               <item>roche academy</item>
+            </one-of>
+            <tag>CHOICE='cobasacademy'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas amplicor</item>
+               <item>amplicor</item>
+               <item>roche amplicor</item>
+            </one-of>
+            <tag>CHOICE='cobasamplicor'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas ampliprep</item>
+               <item>ampliprep</item>
+               <item>ampliprep taqman</item>
+               <item>cobas ampliprep ninety six</item>
+               <item>roche ampliprep</item>
+               <item>the ampliprep</item>
+            </one-of>
+            <tag>CHOICE='cobasampliprep'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas connections</item>
+            </one-of>
+            <tag>CHOICE='cobasconnections'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas fara</item>
+            </one-of>
+            <tag>CHOICE='cobasfara'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas h two three two</item>
+               <item>cobas h two thirty two</item>
+               <item>h two three two</item>
+               <item>h two thirty two</item>
+               <item> two thirty two </item> <!-- tuning 2014 -->
+               <item> cobas h two three two cardiac meter </item> <!-- tuning 2014-->
+               <item> cobas two thirty two </item> <!-- tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='cobash232'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas integra</item>
+               <item>integra</item>
+               <item>the cobas integra</item>
+               <item>the integra</item>
+               <item>roche integra</item>
+            </one-of>
+            <tag>CHOICE='cobasintegra'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>i t one thousand</item>
+               <item>cobas i t one thousand</item>
+               <item>cobas i t one oh oh oh</item>
+               <item>cobas i t one zero zero zero</item>
+            </one-of>
+            <tag>CHOICE='cobasit1000'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>i t three thousand</item>
+               <item>cobas i t three thousand</item>
+               <item>cobas i t three oh oh oh</item>
+               <item>cobas i t three zero zero zero</item>
+            </one-of>
+            <tag>CHOICE='cobasit3000'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas i t middleware</item>
+               <item>i t middleware</item>
+               <item>roche middleware</item> <!-- tuning 2014 -->
+               <item>middleware</item> <!-- tuning 2014 -->
+               <item>sittem </item> <!-- tuning 2014 -->
+               <item>siddem </item> <!-- tuning 2014 -->
+               <item>cit um </item> <!-- tuning 2014 -->
+               <item>cit m </item> <!-- tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='cobasitmiddleware'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>mira</item>
+               <item>mira plus</item>
+               <item>cobas mira plus</item>
+               <item>cobas mira</item>
+            </one-of>
+            <tag>CHOICE='cobasmira'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>p v t</item>
+               <item>p five twelve</item>
+               <item>five twelve</item>
+               <item>cobas p five twelve</item>
+               <item>p five one two</item>
+            </one-of>
+            <tag>CHOICE='cobasp512'</tag>
+         </item>
+          <item>
+            <one-of>
+               <item>cobas pack</item>
+               <item>cobas pack opener</item>
+               <item>pack</item>
+               <item>pack opener</item>
+               <item>cobas c pack</item>
+               <item>cobas c pack opener</item>
+            </one-of>
+            <tag>CHOICE='cobaspack'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas p six twelve</item>
+               <item>p six twelve</item>
+               <item>six twelve</item>
+               <item>six one two</item>
+               <item>p six one two</item>
+               <item>cobas p six one two</item>
+            </one-of>
+            <tag>CHOICE='cobasp612'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>co boss pack</item>
+               <item>pack</item>
+            </one-of>
+            <tag>CHOICE='cobaspack'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas connect two</item>
+               <item>connect two</item>
+            </one-of>
+            <tag>CHOICE='connect2'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>criterion</item>
+               <item>chemstrip criterion two</item>
+               <item>criterion two</item>
+               <item>criterion two urine analyzer</item>
+               <item>miditron</item>
+               <item>miditron two</item>
+               <item>miditron junior</item>
+               <item>miditron junior two</item>
+            </one-of>
+            <tag>CHOICE='criterion'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>c u a</item>
+               <item>chemstrip urine analyzer</item>
+               <item>urine analyzer</item>
+            </one-of>
+            <tag>CHOICE='cua'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>data care p o c</item>
+               <item>data care</item>
+            </one-of>
+            <tag>CHOICE='datacarepoc'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>data station ampli link</item>
+               <item>amplilink</item>
+               <item>data station amplilink</item>
+               <item>amplilink one</item>
+            </one-of>
+            <tag>CHOICE='datastationamplilink'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>donor screening</item>
+               <item>donor screen</item>
+               <item>screen</item>
+               <item>screening</item>
+               <item>blood screen</item>
+               <item>blood screening</item>
+               <item>blood donor</item>
+               <item>o p o</item>
+            </one-of>
+            <tag>CHOICE='donorscreening'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>d p x</item>
+               <item>cobas e four eleven disk</item>
+            </one-of>
+            <tag>CHOICE='dpx'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>e one seventy</item>
+               <item>hitachi e one seventy</item>
+               <item>elecsys e one seventy</item>
+               <item>e one seven oh</item>
+            </one-of>
+            <tag>CHOICE='e170'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>e four eleven</item>
+               <item>the e four eleven cobas</item>
+               <item>the e four eleven</item>
+               <item>elecsys e four eleven</item>
+               <item>e four one one</item>
+               <item>cobas e four eleven</item>
+               <item> cobas four eleven </item> <!-- tuning 2014 -->
+               <item> cobas e four one one </item> <!-- tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='e411'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>e six oh one</item>
+               <item>cobas e six oh one</item>
+               <item>e six oh one</item>
+               <item>e six zero one</item>
+               <item>cobas e six oh one</item>
+               <item>cobas e six zero one</item>
+            </one-of>
+            <tag>CHOICE='e601'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>e six oh two</item>
+               <item>elecsys e six oh two</item>
+               <item>six zero two</item>
+               <item>cobas six oh two</item>
+               <item>six oh two</item>
+               <item>cobas e six zero two</item>
+            </one-of>
+            <tag>CHOICE='e602'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>elecsys twenty ten</item>
+               <item>twenty ten</item>
+               <item>e twenty ten</item>
+               <item>elecsys</item>
+               <item>elecsys two thousand ten</item>
+               <item>hitachi elecsys</item>
+               <item>twenty ten elecsys</item>
+               <item>two zero one zero</item>
+               <item>elecsys two zero one zero</item>
+            </one-of>
+            <tag>CHOICE='elecsys2010'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>gene amp ninety six hundred</item>
+            </one-of>
+            <tag>CHOICE='geneamppcssytem9600'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>genome sequencer twenty</item>
+               <item>genome sequencer two zero</item>
+               <item>genome sequencer two oh</item>
+               <item>sequencer</item>
+            </one-of>
+            <tag>CHOICE='genomesequencer20'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>genome sequencer f l x</item>
+               <item>genome sequencer flex</item>
+            </one-of>
+            <tag>CHOICE='genomesequencerflx'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>genome sequencer f l x plus</item>
+               <item>genome sequencer flex plus</item>
+            </one-of>
+            <tag>CHOICE='genomesequencerflxplus'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>g s f l x</item>
+               <item>g s flex</item>
+            </one-of>
+            <tag>CHOICE='gsflx'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>g s junior</item>
+            </one-of>
+            <tag>CHOICE='gsjunior'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>hamilton</item>
+               <item>hamilton a t plus</item>
+            </one-of>
+            <tag>CHOICE='hamilton'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>hamilton diluter</item>
+            </one-of>
+            <tag>CHOICE='hamiltondiluter'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>hamilton star</item>
+               <item>star</item>
+               <item>hamilton starlet</item>
+               <item>starlet</item>
+            </one-of>
+            <tag>CHOICE='hamiltonstar'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>heraeus seventeen r s centrifuge</item>
+               <item>seventeen r s centrifuge</item>
+               <item>r s centrifuge</item>
+               <item>hairy us seventeen r s centrifuge</item>
+            </one-of>
+            <tag>CHOICE='heraeus17rscentrifuge'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>hitachi</item>
+               <item>seven oh two</item>
+            </one-of>
+            <tag>CHOICE='hitachi'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>hitachi interface</item>
+               <item>hitachi host communication</item>
+               <item>hitachi host interface</item>
+            </one-of>
+            <tag>CHOICE='hitachiinterface'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>hybridization system one two</item>
+               <item>hybridization system twelve</item>
+            </one-of>
+            <tag>CHOICE='hybridizationsystem12'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>hybridization system four</item>
+            </one-of>
+            <tag>CHOICE='hybridizationsystem4'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>i m a</item>
+               <item>integrated modular analytics</item>
+            </one-of>
+            <tag>CHOICE='ima'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>integra four hundred</item>
+               <item>i four hundred</item>
+               <item>co boss integra four hundred</item>
+               <item>cobas integra i four hundred</item>
+               <item>four hundred</item>
+               <item>roche integra four hundred</item>
+               <item>the cobas integra four hundred</item>
+            </one-of>
+            <tag>CHOICE='integra400'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>integra four hundred plus</item>
+               <item>i four hundred plus</item>
+               <item>cobas integra four hundred plus</item>
+               <item>cobas i four hundred plus</item>
+               <item>cobas four hundred</item>
+               <item>cobas four hundred integra</item>
+               <item>cobas four hundred plus</item>
+            </one-of>
+            <tag>CHOICE='integra400plus'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>integra eight hundred</item>
+               <item>i eight hundred</item>
+               <item>cobas integra eight hundred</item>
+               <item>cobas i eight hundred</item>
+               <item>cobas eight hundred</item>
+               <item>the integra eight hundred</item>
+               <item>the integra eight zero zero</item>
+            </one-of>
+            <tag>CHOICE='integra800'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>integra interface</item>
+               <item>integra host communication</item>
+               <item>integra host interface</item>
+               <item>cobas integra interface</item>
+            </one-of>
+            <tag>CHOICE='integrainterface'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>i s e nine hundred</item>
+               <item>i s e nine oh oh</item>
+               <item>i s e nine zero zero</item>
+            </one-of>
+            <tag>CHOICE='ise900'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>light cycler one dot five</item>
+               <item>light cycler one point five</item>
+               <item>light cycler one five</item>
+            </one-of>
+            <tag>CHOICE='lightcycler15'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>l c two</item>
+               <item>l c carousel</item>
+               <item>lightcycler carousel</item>
+            </one-of>
+            <tag>CHOICE='lc2'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>light cycler two</item>
+               <item> light cycler two point zero </item> <!-- tuning 2014 -->
+               <item> light cycler two point oh </item> <!-- tuning 2014 -->
+               <item>l c 2</item>
+            </one-of>
+            <tag>CHOICE='lightcycler2'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>light cycler four eight zero</item>
+               <item>light cycler four eight oh</item> <!-- tuning 2014 -->
+               <item>light cycler one five three six</item>
+               <item> light cycler four eighty </item> <!-- tuning 2014 -->
+               <item>light cycler fifteen thirty six</item>
+            </one-of>
+            <tag>CHOICE='lightcycler480'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>light cycler one five three six</item>
+               <item>light cycler fifteen thirty six</item>
+               <item>fifteen thirty six</item>
+            </one-of>
+            <tag>CHOICE='lightcycler1536'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>light cycler ninety six</item>
+               <item>light cycler nine six</item>
+            </one-of>
+            <tag>CHOICE='lightcycler96'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>light cycler</item>
+            </one-of>
+            <tag>CHOICE='lightcyclercan'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>light cycler carousel centrifuge</item>
+               <item>light cycler centrifuge</item>
+               <item>carousel centrifuge</item>
+            </one-of>
+            <tag>CHOICE='lightcyclercarouselcentrifuge'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>light cycler nano</item>
+            </one-of>
+            <tag>CHOICE='lightcyclernano'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>linear array</item>
+            </one-of>
+            <tag>CHOICE='lineararray'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>magnalyzer</item>
+               <item>magna lyzer</item>
+            </one-of>
+            <tag>CHOICE='magnalyzer'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>magna pure</item>
+            </one-of>
+            <tag>CHOICE='magnapurecan'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>magna pure ninety six</item>
+               <item>magna pure nine six</item>
+            </one-of>
+            <tag>CHOICE='magnapure96'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>magna pure compact</item>
+            </one-of>
+            <tag>CHOICE='magnapurecompact'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>magna pure l c</item>
+            </one-of>
+            <tag>CHOICE='magnapurelc'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>magna pure l c twenty</item>
+               <item>magna pure l c two</item>
+               <item>magna pure l c two zero</item>
+            </one-of>
+            <tag>CHOICE='magnapurelc20'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>matrix impact pipette</item>
+               <item>matrix pipette</item>
+               <item>pipette</item>
+               <item>pipetter</item>
+            </one-of>
+            <tag>CHOICE='matriximpactpipette'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>micro array</item>
+               <item>micro</item>
+               <item>micro array dryer</item>
+            </one-of>
+            <tag>CHOICE='microarraydryer'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>mira</item>
+               <item>mira plus</item>
+               <item>cobas mira</item>
+               <item>cobas mira plus</item>
+            </one-of>
+            <tag>CHOICE='miraormiraplus'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>modular d</item> <!-- tuning 2014 -->
+               <item>d module</item>
+               <item>the d module</item>
+               <item>d mod</item>	
+               <item>modular</item>
+               <item>core</item>
+               <item>modular core</item>
+               <item>roche modular</item>
+               <item>hitachi modular</item>
+               <item>cobas modular</item>
+            </one-of>
+            <tag>CHOICE='modular'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>modulare170</item>
+               <item>modular e one seventy</item>
+               <item>modular e</item>
+               <item>e module</item>
+            </one-of>
+            <tag>CHOICE='modulare170'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>modular p</item> <!-- tuning 2014 -->
+               <item>p module</item>
+               <item>p mod</item>
+               <item>p modular</item>
+               <item>the p modular</item>
+               <item>hitachi modular p</item>
+               <item>hitachi p module</item>
+            </one-of>
+            <tag>CHOICE='modularp'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>modular pre o s</item>
+               <item>p s m</item>
+               <item>p s m basic</item>
+            </one-of>
+            <tag>CHOICE='modularpreos'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>m p a</item>
+               <item>modular pre analytics</item>
+               <item>m p a seven</item>
+               <item>m p a lab automation</item>
+               <item>modular m p a</item>
+            </one-of>
+            <tag>CHOICE='mpa'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>m p x</item>
+            </one-of>
+            <tag>CHOICE='mpx'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>m s b</item>
+            </one-of>
+            <tag>CHOICE='msb'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>nimble gen m s two hundred</item>
+               <item>nimble gen m s two zero zero</item>
+               <item>nimble gen m s two oh oh</item>
+               <item>nimble gen</item>
+               <item>nimblegen</item>
+            </one-of>
+            <tag>CHOICE='nimblegenms200'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>omnilink</item>
+               <item>omni link</item>
+            </one-of>
+            <tag>CHOICE='omnilink'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>p three one two</item>
+               <item>p three twelve</item>
+               <item>cobas p three one two</item>
+               <item>cobas p three twelve</item>
+            </one-of>
+            <tag>CHOICE='p312'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>p four seventy one</item>
+               <item>p four seven one</item>
+               <item>cobas p four seventy one</item>
+               <item>cobas p four seven one</item>
+            </one-of>
+            <tag>CHOICE='p471'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>p five oh one</item>
+               <item>p seven oh one</item>
+               <item>cobas p five oh one</item>
+               <item>cobas p five zero one</item>
+               <item>cobas p seven oh one</item>
+               <item>cobas p seven zero one</item>
+            </one-of>
+            <tag>CHOICE='p501701'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>p six seven one</item>
+               <item>p six seventy one</item>
+               <item>cobas p six seven one</item>
+               <item>cobas p six seventy one</item>
+            </one-of>
+            <tag>CHOICE='p671'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>p d m</item>
+               <item>p d m server</item>
+               <item>server p d m</item>
+               <item>server</item>
+            </one-of>
+            <tag>CHOICE='pdm'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>p s d</item>
+            </one-of>
+            <tag>CHOICE='psd'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>reflo tron</item>
+               <item>reflotron</item>
+            </one-of>
+            <tag>CHOICE='reflotron'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>r s a pro</item>
+            </one-of>
+            <tag>CHOICE='rsapro'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>r s d pro</item>
+               <item>r s d</item>
+               <item>r s d pro eight zero zero</item>
+               <item>r s d pro eight oh oh</item>
+               <item>r s d pro eight hundred</item>
+               <item>r s d pro eight zero zero a</item>
+               <item>r s d pro eight oh oh a</item>
+               <item>r s d pro eight hundred a</item>
+               <item>r s d eight zero zero</item>
+               <item>r s d eight oh oh</item>
+               <item>r s d eight hundred</item>
+               <item>r s d eight zero zero a</item>
+               <item>r s d eight oh oh a</item>
+               <item>r s d eight hundred a</item>
+            </one-of>
+            <tag>CHOICE='rsdpro'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>r t c a cardio</item>
+               <item>r t c a</item>
+            </one-of>
+            <tag>CHOICE='rtcacardio'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>r t c a instrument</item>
+            </one-of>
+            <tag>CHOICE='rtcainstrument'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>s two oh one</item>
+               <item>s two zero one</item>
+               <item>cobas s two oh one</item>
+               <item>cobas s two zero one</item>
+               <item>cobas s two oh one system</item>
+               <item>cobas s two zero one system</item>
+               <item>s two oh one system</item>
+            </one-of>
+            <tag>CHOICE='s201'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas s four oh one system</item>
+               <item>cobas s four oh one</item>
+               <item>cobas s four zero one system</item>
+               <item>cobas s four zero one</item>
+               <item>s four oh one system</item>
+               <item>s four oh one</item>
+               <item>s four zero one system</item>
+               <item>s four zero one</item>
+            </one-of>
+            <tag>CHOICE='s401'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>s six</item>
+               <item>cobas s six</item>
+            </one-of>
+            <tag>CHOICE='s6'</tag>
+         </item>
+         <item> 
+            <one-of>
+			<item>taqman</item>
+			<item>taqman forty eight</item>
+			<item>taqman ninety six</item>
+			<item>cobas taqman</item> <!-- Tuning Update DIR 9/12/12 -->
+			<item>cobas taqman forty eight</item> <!-- Tuning Update DIR 09/28/12 -->
+			<item>cobas taqman fourty eight analyzer</item> <!-- Tuning Update DIR 09/28/12 -->
+            </one-of>
+          
+			<tag>CHOICE='taqman'</tag>
+		</item> 
+         <item>
+            <one-of>
+               <item>tecan</item>
+               <item>tea can</item>
+            </one-of>
+            <tag>CHOICE='tecan'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>thermal cycler</item>
+            </one-of>
+            <tag>CHOICE='thermalcycler'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>urilux</item>
+            </one-of>
+            <tag>CHOICE='urilux'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>urisys one one oh oh</item>
+               <item>urisys one one zero zero</item>
+               <item>urisys eleven oh oh</item>
+               <item>urisys eleven zero zero</item>
+               <item>urisys eleven hundred</item>
+               <item> urisys </item> <!-- tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='urisys1100'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>urisys one eight oh oh</item>
+               <item>urisys one eight zero zero</item>
+               <item>urisys eighteen oh oh</item>
+               <item>urisys eighteen zero zero</item>
+               <item>urisys eighteen hundred</item>
+            </one-of>
+            <tag>CHOICE='urisys1800'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>urisys two four oh oh</item>
+               <item>urisys two four zero zero</item>
+               <item>urisys twenty four oh oh</item>
+               <item>urisys twenty four zero zero</item>
+               <item>urisys twenty four hundred</item>
+            </one-of>
+            <tag>CHOICE='urisys2400'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>urisys four one one</item>
+               <item>urisys four eleven</item>
+               <item>u four eleven</item>
+               <item>u four one one</item>
+               <item>urisys four hundred eleven</item>
+               <item>urisys four hundred and eleven</item>
+               <item>cobas u four one one</item> <!-- tuning 2014 -->
+               <item>cobas u four eleven</item> <!-- tuning 2014 -->
+               <item>cobas four hundred eleven</item> <!-- tuning 2014 -->
+               <item>cobas four hundred and eleven</item> <!-- tuning 2014 -->
+            </one-of>
+            <tag>CHOICE='urisys411'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>urisys six oh one</item>
+               <item>urisys six zero one</item>
+               <item>urisys six hundred one</item>
+               <item>urisys six hundred and one</item>
+               <item>u six oh one</item>
+               <item>u six zero one</item>
+               <item>u six hundred one</item>
+               <item>u six hundred and one</item>
+               <item>cobas u six oh one</item>
+               <item>cobas u six zero one</item>
+               <item>cobas u six hundred one</item>
+               <item>cobas u six hundred and one</item>
+            </one-of>
+            <tag>CHOICE='urisys601'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>urisys six five oh oh</item>
+               <item>urisys six five zero zero</item>
+               <item>urisys sixty five oh oh</item>
+               <item>urisys sixty five zero zero</item>
+               <item>urisys sixy five hundred</item>
+               <item>u six five oh oh</item>
+               <item>u six five zero zero</item>
+               <item>u sixty five oh oh</item>
+               <item>u sixty five zero zero</item>
+               <item>u sixy five hundred</item>
+            </one-of>
+            <tag>CHOICE='urisys6500'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>urisys seven oh one</item>
+               <item>urisys seven zero one</item>
+               <item>urisys seven hundred one</item>
+               <item>urisys seven hundred and one</item>
+               <item>u seven oh one</item>
+               <item>u seven zero one</item>
+               <item>u seven hundred one</item>
+               <item>u seven hundred and one</item>
+            </one-of>
+            <tag>CHOICE='urisys701'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>v four eight oh</item>
+               <item>v four eight zero</item>
+               <item>v four eighty</item>
+            </one-of>
+            <tag>CHOICE='v480'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>v s two five oh</item>
+               <item>v s two five zero</item>
+               <item>v s two fifty</item>
+               <item>v s two five oh rack</item>
+               <item>v s two five zero rack</item>
+               <item>v s two fifty rack</item>
+            </one-of>
+            <tag>CHOICE='vs250'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>west nile virus</item>
+            </one-of>
+            <tag>CHOICE='westnilevirus'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>x four two one</item>
+               <item>x four twenty one</item>
+               <item>cobas x four twenty one</item>
+               <item>cobas x four two one</item>
+            </one-of>
+            <tag>CHOICE='x421'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas link</item>
+               <item>link</item>
+            </one-of>
+            <tag>CHOICE='cobaslink'</tag>
+         </item>
+          <item>
+            <one-of>
+               <item>four eleven</item>
+               <item>four one one</item>
+               <item>four hundred eleven</item>
+               <item>four hundred and eleven</item>
+            </one-of>
+            <tag>CHOICE='411'</tag>
+         </item>
+          <item>
+            <one-of>
+               <item>five zero one</item>
+               <item>five oh one</item>
+               <item>five hundred one</item>
+               <item>five hundred and one</item>
+            </one-of>
+            <tag>CHOICE='501'</tag>
+         </item>
+          <item>
+            <one-of>
+               <item>six zero one</item>
+               <item>six oh one</item>
+               <item>six hundred one</item>
+               <item>six hundred and one</item>
+            </one-of>
+            <tag>CHOICE='601'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>seven zero one</item>
+               <item>seven oh one</item>
+               <item>seven hundred one</item>
+               <item>seven hundred and one</item>
+            </one-of>
+            <tag>CHOICE='701'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas i t</item>
+               <item>cobas it</item>
+            </one-of>
+            <tag>CHOICE='cobasit'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>benchmark special stains</item>
+               <item>benchmark</item>
+               <item>special stains</item>
+               <item>stains</item>
+               <item>s s</item>
+            </one-of>
+            <tag>CHOICE='benchmarkspecialstains'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>benchmark ultra</item>
+            </one-of>
+            <tag>CHOICE='benchmarkultra'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>benchmark x t l t</item>
+               <item>benchmark x t</item>
+               <item>benchmark l t</item>
+               <item>x t l t</item>
+               <item>l t</item>
+            </one-of>
+            <tag>CHOICE='benchmarkxtlt'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>x t</item>
+            </one-of>
+            <tag>CHOICE='xt'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>discovery</item>
+               <item>disco</item>
+            </one-of>
+            <tag>CHOICE='discovery'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>discovery ultra</item>
+               <item>disco ultra</item>
+               <item>ultra</item>
+            </one-of>
+            <tag>CHOICE='discoveryultra'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>discovery x t</item>
+               <item>disco x t</item>
+               <item>x t</item>
+            </one-of>
+            <tag>CHOICE='discoveryxt'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>i scan</item>	
+               <item>iscan</item>
+               <item>eye scan</item>
+               <item>i scan coreo</item>
+               <item>i scan core e o a u</item>
+               <item>eye scan core e o a u</item>
+               <item>eye scan core e o</item>
+               <item>eye scan core e o gold</item>
+               <item>i scan core e o gold</item>
+               <item>i scan core e o a u</item>
+               <item>core e o</item>
+               <item>coreo gold</item>
+               <item>core e o gold</item>
+               <item>coreo a u</item>
+               <item>core e o a u</item>
+               <item>digital imaging</item>
+            </one-of>
+            <tag>CHOICE='iscancoreoau'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>i scan h t r u o</item>
+               <item>eye scan h t r u o</item>
+               <item>i scan h t</item>
+               <item>eye scan h t</item>
+            </one-of>
+            <tag>CHOICE='iscanhtruo'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>nexus</item>
+               <item>nexus i h c</item>
+               <item>nexes i h c</item>
+               <item>nexes</item>
+               <item>nex e s</item>
+               <item>nex e s i h c</item>
+               <item>i h c</item>
+            </one-of>
+            <tag>CHOICE='nexesihc'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>nexes</item>
+               <item>nex e s</item>
+               <item>special stainer</item>
+               <item>nexes special stainer</item>
+               <item>nex e s special stainer</item>
+               <item>nexes special stains</item>
+               <item>nex e s special stains</item>
+            </one-of>
+            <tag>CHOICE='nexesspecialstains'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>symphony</item>
+            </one-of>
+            <tag>CHOICE='symphony'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>symphony s plus</item>
+               <item>s plus</item>
+            </one-of>
+            <tag>CHOICE='symphonysplus'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>vantage</item>
+               <item>vantage systems</item>
+            </one-of>
+            <tag>CHOICE='vantagesystems'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>vias</item>
+               <item>microscope</item>
+               <item>v i a s</item>
+               <item>imaging</item>
+               <item>vie us</item>
+            </one-of>
+            <tag>CHOICE='vias'</tag>
+         </item>
+         <item> 
+            <one-of>
+				  <item><ruleref uri='dontKnow_N9.grxml#root'/></item>
+              <item>none</item> <!-- tuning 2014 -->
+              <item>it's not an instrument</item><!-- tuning 2014 -->
+              <item>no instrument</item><!-- tuning 2014 -->
+              <item>there is no instrument</item><!-- tuning 2014 -->
+			   </one-of>
+			<tag>CHOICE='dontknowit'</tag>
+		 </item>
+      </one-of>
+   </rule>
+</grammar>

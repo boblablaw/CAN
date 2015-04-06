@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+	xml:lang="fr-CA" 
+	mode="voice" 
+	root="root">
+
+	
+<rule id="root" scope="public">
+	<one-of>
+		<item>
+			<ruleref uri="#dontKnow"/>
+			<tag>CHOICE='dontknow';</tag>
+		</item>
+		
+		<item>
+			<ruleref uri="#dontHave"/>
+			<tag>CHOICE='dontknow';</tag>
+		</item>
+
+	</one-of>
+</rule>
+
+<!-- ############################################## -->
+<rule id="dontKnow" scope="public">
+<item>
+<tag>CHOICE='dont_know';</tag>
+
+	<item repeat="0-1"><ruleref uri="#dontPrefiller"/></item>
+	<one-of>
+		<item>sais pas</item>
+		<item>je sais pas</item>
+		<item>Je l'sais pas</item>
+		<item>je ne le sais pas</item>
+		<item>connais pas</item>
+		<item>je l'connais pas</item>
+		<item>Je ne le connais pas</item>
+		<item>aucunne idée</item>
+		<item>ché pas</item>
+
+		
+	</one-of>
+</item>
+</rule>
+<!-- ############################################## -->
+
+<rule id="dontHave" scope="public">
+<item>
+<tag>CHOICE='dontknow';</tag>
+
+	<item repeat="0-1"><ruleref uri="#dontPrefiller"/></item>
+	<one-of>
+		<item>l'ai pas</item>
+		<item>j'l'ai pas</item>
+		<item>je ne l'ai pas</item>
+		<item>j'en ai pas</item>
+		<item>n'ai pas</item>
+		<item>n'a pas</item>
+		<!-- <item>pas</item> tuning 2014 -->
+		<item> j'en ai pas <tag>CHOICE='idontknow';</tag></item>
+		<item> je n'en ai pas <tag>CHOICE='idontknow';</tag></item>
+		<item> je ne le connais pas <tag>CHOICE='idontknow';</tag></item> <!--tuning 2014 -->
+		<item> j'en ai aucune idée <tag>CHOICE='idontknow';</tag></item> <!--tuning 2014 -->
+		<item> je ne sais pas <tag>CHOICE='idontknow';</tag></item> <!--tuning 2014 -->
+		<item> ne le sais pas <tag>CHOICE='idontknow';</tag></item> <!--tuning 2014 -->
+		<item> ne s ne sais pas <tag>CHOICE='idontknow';</tag></item> <!--tuning 2014 -->
+		<item> ne sais pas <tag>CHOICE='idontknow';</tag></item> <!--tuning 2014 -->
+		<item> non je ne le sais pas <tag>CHOICE='idontknow';</tag></item> <!--tuning 2014 -->
+	</one-of>
+</item>
+
+</rule>
+
+<!-- ############################################## -->
+<!--typically used where caller base includes customers and non-customers-->
+
+<rule id="dontHaveOne" scope="public">
+<item>
+<tag>CHOICE='donthaveone';</tag>
+
+	<item repeat="0-1"><ruleref uri="#dontPrefiller"/></item>
+	<one-of>
+		<item>J'en ai pas</item>
+		<item>Je n'en ai pas</item>
+		<item>n'ai pas</item>
+		<item>n'a pas</item>
+		<item>aucun</item>
+		<item>J'en ai pas</item>
+
+	</one-of>
+</item>
+
+</rule>
+
+<!-- ############################################## -->
+<!--limited use; only add if tuning shows needed-->
+<rule id="dontRemember" scope="public">
+<item>
+<tag>CHOICE='dontknow';</tag>
+
+	<item repeat="0-1"><ruleref uri="#dontPrefiller"/></item>
+	<one-of>
+		<item>souviens plus</item>
+		<item>souviens pus</item>
+		<item>souviens pas</item>
+		<item>m'en souviens plus</item>
+		<item>m'en souviens pus</item>
+		<item>m'en souviens pas</item>
+		<item>je m'en souviens plus</item>
+		<item>je m'en souviens pus</item>
+		<item>je m'en souviens pas</item>
+		<item>je ne m'en souviens plus</item>
+		<item>je ne m'en souviens pus</item>
+		<item>Je ne m'en souviens pas</item>
+		<item>rapelle plus</item>
+		<item>rapelle pus</item>
+		<item>rapelle pas</item>
+		<item>m'en rapelle plus</item>
+		<item>m'en rapelle pus</item>
+		<item>m'en rapelle pas</item>
+		<item>je m'en rapelle plus</item>
+		<item>je m'en rapelle pus</item>
+		<item>je m'en rapelle pas</item>
+		<item>je ne m'en rapelle plus</item>
+		<item>je ne m'en rapelle pus</item>
+		<item>Je ne m'en rapelle pas</item>
+	</one-of>
+</item>
+</rule>
+<!-- ############################################## -->
+
+<rule id="dontPrefiller" scope="public">
+<!-- dont is here as well for stutter starts-->
+<item>
+	<one-of>
+		<item>je</item>
+	</one-of>
+</item>
+
+</rule>
+
+</grammar>

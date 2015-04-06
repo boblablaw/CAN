@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by Exporter version 1.0 at 2015-04-06 09:45:31.546 GMT-4--><!--Note: Components marked as 'debug' have been removed from the call flow.--><scxml xmlns:icview="http://www.intervoice.com/sce/icview"
+       xmlns:jms="http://www.intervoice.com/sce/action/jms"
+       xmlns:mim="http://www.intervoice.com/sce/action/mim"
+       xmlns:scripting="http://www.intervoice.com/sce/action/scripting"
+       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+       xmlns:process="http://www.intervoice.com/sce/action/process"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:gtfns="http://www.intervoice.com/gtfns/1.0"
+       xmlns="http://www.w3.org/2007/02/scxml"
+       xmlns:icxml="http://www.intervoice.com/icxml"
+       xmlns:xmi="http://www.omg.org/XMI"
+       xmlns:intv="http://www.intervoice.com/scxml"
+       xmlns:vca="http://www.intervoice.com/sce/action/vca"
+       xmlns:ex="http://www.intervoice.com/exporter"
+       initialstate="documentEntry"
+       intv:worksheetscope="applications/voice/Worksheet.ws"
+       version="1.0">
+   <state id="documentEntry">
+      <initial>
+         <transition target="documentEntry_doLocalInit"/>
+      </initial>
+      <state id="documentEntry_doLocalInit">
+         <onentry>
+            <assign location="intv_appType" expr="undefined"/>
+            <rdotype:get xmlns:rdotype="http://www.intervoice.com/sce/action/rdotype"
+                         location="intv_appType"/>
+            <if cond="intv_appType == 'vca'">
+               <assign location="intv_appType" expr="'voice'"/>
+               <elseif cond="intv_appType == 'ccxml'"/>
+               <assign location="intv_appType" expr="'call'"/>
+               <elseif cond="intv_appType == 'UNKNOWN'"/>
+               <assign location="intv_appType" expr="'process'"/>
+            </if>
+         </onentry>
+         <transition target="blockEntry_nigfaj"/>
+      </state>
+      <datamodel><!--Variables from declaration block: _kt5TsG3zEeGdv9jpX9jaxw--><data name="intv_appType" expr="undefined"/>
+         <data name="intv_eventName" expr="undefined"/>
+         <data name="intv_eventData" expr="undefined"/>
+         <data name="intv_noFieldsInitialized" expr="undefined"/>
+         <data name="intv_allFieldsInitialized" expr="undefined"/>
+         <data name="intv_atLeastOneSituationExecuted" expr="undefined"/>
+         <data name="intv_modalities" expr="undefined"/>
+         <data name="result" expr="undefined"/>
+         <data name="dummy" expr="undefined"/>
+         <data name="languageSelectionObj" expr="undefined"/>
+      </datamodel>
+      <state id="blockEntry_nigfaj">
+         <onentry>
+            <icview:log text="action=entry, type=BlockEntry, name=, id=blockEntry_nigfaj, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=BlockEntry, name=, id=blockEntry_nigfaj, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="if_zuvdil"/>
+      </state>
+      <state id="goToBlock_yugjes">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_RP1100_NewOrExisting.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=NeworExisting, id=goToBlock_yugjes, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=NeworExisting, id=goToBlock_yugjes, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+      <state id="setLanguage_fefqeg">
+         <datamodel>
+            <data name="intv_locale" expr="undefined"/>
+            <data name="intv_language" expr="undefined"/>
+            <data name="intv_country" expr="undefined"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SetLanguage, name=SetFrench, id=setLanguage_fefqeg, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+               <icview:param name="locale" expr="'fr-CA'"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <assign location="intv_locale" expr="'fr-CA'"/>
+            <assign location="intv_language" expr="intv_locale.substr(0, 2)"/>
+            <assign location="intv_country" expr="intv_locale.substr(3, 2)"/>
+            <vca:config domain="'com.intervoice.scxml.runtime.voice'">
+               <vca:item name="'language'" expr="intv_language"/>
+               <vca:item name="'country'" expr="intv_country"/>
+               <vca:item name="'speaker'" expr="'default'"/>
+            </vca:config>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SetLanguage, name=SetFrench, id=setLanguage_fefqeg, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="calc_sucjej"/>
+      </state>
+      <state id="setLanguage_mubzum">
+         <datamodel>
+            <data name="intv_locale" expr="undefined"/>
+            <data name="intv_language" expr="undefined"/>
+            <data name="intv_country" expr="undefined"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SetLanguage, name=SetEnglish, id=setLanguage_mubzum, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+               <icview:param name="locale" expr="'en-US'"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <assign location="intv_locale" expr="'en-US'"/>
+            <assign location="intv_language" expr="intv_locale.substr(0, 2)"/>
+            <assign location="intv_country" expr="intv_locale.substr(3, 2)"/>
+            <vca:config domain="'com.intervoice.scxml.runtime.voice'">
+               <vca:item name="'language'" expr="intv_language"/>
+               <vca:item name="'country'" expr="intv_country"/>
+               <vca:item name="'speaker'" expr="'default'"/>
+            </vca:config>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SetLanguage, name=SetEnglish, id=setLanguage_mubzum, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="calc_sifhad"/>
+      </state>
+      <state id="if_jetwuc">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_jetwuc, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+               <icview:param name="RAS"
+                             value="(_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASFrenchDNIS&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASFrenchDNISTest&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASBiDNIS&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASBiDNISTest&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASEnglishDNIS&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASEnglishDNISTest&#34;))"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_jetwuc, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="(_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASFrenchDNIS&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASFrenchDNISTest&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASBiDNIS&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASBiDNISTest&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASEnglishDNIS&#34;) || _ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASEnglishDNISTest&#34;))"
+                     target="goToBlock_zimcuk">
+            <icview:log text="action=leg:RAS, type=If, name=, id=if_jetwuc, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="true" target="goToBlock_yugjes">
+            <icview:log text="action=leg:default, type=If, name=, id=if_jetwuc, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_sucjej">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=, id=calc_sucjej, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <assign location="_ws.languageResult" expr="'French'"/>
+            <assign location="_ws.vdnName" expr="'CANF'"/>
+            <assign location="_ws.ivrNotes" expr="_ws.ivrNotes + ' - FRENCH language selected'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=, id=calc_sucjej, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true">
+               <icview:result name="_ws.languageResult" expr="_ws.languageResult"/>
+               <icview:result name="_ws.vdnName" expr="_ws.vdnName"/>
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_tivneb">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_tivneb">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_tivneb, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <log expr="'EVENT - Language set to French'" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_tivneb, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="script_cufyal">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_tivneb, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+      </state>
+      <state id="log_zetruc">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_zetruc, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <log expr="'EVENT - Language set to English'" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_zetruc, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="script_cubpav">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_zetruc, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_sifhad">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=SetEnglish, id=calc_sifhad, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <assign location="_ws.languageResult" expr="'English'"/>
+            <assign location="_ws.vdnName" expr="'CANE'"/>
+            <assign location="_ws.ivrNotes" expr="_ws.ivrNotes + ' - ENGLISH language selected'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=SetEnglish, id=calc_sifhad, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true">
+               <icview:result name="_ws.languageResult" expr="_ws.languageResult"/>
+               <icview:result name="_ws.vdnName" expr="_ws.vdnName"/>
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_zetruc">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="collect_xurbih">
+         <initial>
+            <transition target="genericCollect_collect_xurbih"/>
+         </initial>
+         <onentry>
+            <icview:log text="action=entry, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <assign location="languageSelectionObj" expr="undefined"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <state id="genericCollect_collect_xurbih">
+            <onentry intv:abortonerror="true">
+               <vca:collect fallback="true" inputMode="'both'" maxErrors="2" maxNoInput="1" maxNoMatch="2"
+                            maxSpeechTimeout="1"
+                            formName="'CollectLanguage__collect_xurbih'">
+                  <vca:collectPrompts cond="true" doReprompt="false" presentAs="'sequence'" promptCount="1"
+                                      scope="'default'">
+                     <vca:prompt bargeIn="true" cond="true" expr="'RP1050_i_1.wav'"
+                                 fallbackText="'For French say French'"
+                                 type="'message'"/>
+                  </vca:collectPrompts>
+                  <vca:collectPrompts cond="true" doReprompt="false" presentAs="'sequence'" promptCount="1"
+                                      scope="'nomatch'">
+                     <vca:prompt bargeIn="true" cond="true" expr="'RP1050_r_1.wav'"
+                                 fallbackText="'For French say French, or press 1'"
+                                 type="'message'"/>
+                  </vca:collectPrompts>
+                  <vca:grammar expr="'RP1050_LanguageSelection_DTMF.grxml'" mimeType="'application/srgs+xml'"
+                               type="'url'">
+                     <vca:element type="'attr'" name="'mode'" expr="'dtmf'"/>
+                  </vca:grammar>
+                  <vca:element name="'sensitivity'" expr="'0.5'" type="'prop'"/>
+                  <vca:element name="'speedvsaccuracy'" expr="'0.5'" type="'prop'"/>
+                  <vca:element name="'completetimeout'" expr="'1000ms'" type="'prop'"/>
+                  <vca:element name="'confidencelevel'" expr="'0.2'" type="'prop'"/>
+                  <vca:element name="'timeout'" expr="'2500ms'" type="'prop'"/>
+                  <vca:element name="'interdigittimeout'" expr="'2500ms'" type="'prop'"/>
+                  <vca:element name="'maxspeechtimeout'" expr="'25000ms'" type="'prop'"/>
+               </vca:collect>
+            </onentry>
+            <transition event="vca:success" target="if_domjuk">
+               <assign location="intv_eventName" expr="'Success'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="languageSelectionObj" expr="_eventdata"/>
+               <icview:log text="action=leg:vca:success, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+                  <icview:result name="resultVariable" expr="languageSelectionObj"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.general" target="if_domjuk">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="languageSelectionObj" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.general, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+                  <icview:result name="resultVariable" expr="languageSelectionObj"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.unhandled" target="if_domjuk">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="languageSelectionObj" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.unhandled, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+                  <icview:result name="resultVariable" expr="languageSelectionObj"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.reco.maxnomatch" target="if_domjuk">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="languageSelectionObj" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.reco.maxnomatch, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+                  <icview:result name="resultVariable" expr="languageSelectionObj"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.reco.maxnoinput" target="if_domjuk">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="languageSelectionObj" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.reco.maxnoinput, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+                  <icview:result name="resultVariable" expr="languageSelectionObj"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.reco.maxspeechtimeout" target="if_domjuk">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="languageSelectionObj" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.reco.maxspeechtimeout, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+                  <icview:result name="resultVariable" expr="languageSelectionObj"/>
+               </icview:log>
+            </transition>
+            <transition event="vca:error.reco.maxerrors" target="if_domjuk">
+               <assign location="intv_eventName" expr="'Ignore'"/>
+               <assign location="intv_eventData" expr="_eventdata"/>
+               <assign location="languageSelectionObj" expr="_eventdata"/>
+               <icview:log text="action=leg:ignore:Error:vca:error.reco.maxerrors, type=Collect, name=CollectLanguage, id=collect_xurbih, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+                  <icview:result name="resultVariable" expr="languageSelectionObj"/>
+               </icview:log>
+            </transition>
+         </state>
+      </state>
+      <state id="if_domjuk">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=FrenchSelected, id=if_domjuk, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+               <icview:param name="French"
+                             value="languageSelectionObj.result &gt; '' &amp;&amp; languageSelectionObj.result.slot1 == 'french'"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=FrenchSelected, id=if_domjuk, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="languageSelectionObj.result &gt; '' &amp;&amp; languageSelectionObj.result.slot1 == 'french'"
+                     target="setLanguage_fefqeg">
+            <icview:log text="action=leg:French, type=If, name=FrenchSelected, id=if_domjuk, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="true" target="setLanguage_puqtin">
+            <icview:log text="action=leg:default, type=If, name=FrenchSelected, id=if_domjuk, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+      </state>
+      <state id="if_zuvdil">
+         <onentry>
+            <icview:log text="action=entry, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+               <icview:param name="RCCFrench"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCFrenchDNIS&#34;)"/>
+               <icview:param name="RCCFrenchTest"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCFrenchDNISTest&#34;)"/>
+               <icview:param name="RCCEnglish"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCEnglishDNIS&#34;)"/>
+               <icview:param name="RCCEnglishTest"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCEnglishDNISTest&#34;)"/>
+               <icview:param name="ASFrench"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASFrenchDNIS&#34;)"/>
+               <icview:param name="ASFrenchTest"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASFrenchDNISTest&#34;)"/>
+               <icview:param name="ASEnglish"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASEnglishDNIS&#34;)"/>
+               <icview:param name="ASEnglishTest"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASEnglishDNISTest&#34;)"/>
+               <icview:param name="RCCBi"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCBiDNIS&#34;)"/>
+               <icview:param name="RCCBiTest"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCBiDNISTest&#34;)"/>
+               <icview:param name="ASBi" value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASBiDNIS&#34;)"/>
+               <icview:param name="ASBiTest"
+                             value="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASBiDNISTest&#34;)"/>
+            </icview:log>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCFrenchDNIS&#34;)"
+                     target="setLanguage_fefqeg">
+            <icview:log text="action=leg:RCCFrench, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCFrenchDNISTest&#34;)"
+                     target="setLanguage_fefqeg">
+            <icview:log text="action=leg:RCCFrenchTest, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCEnglishDNIS&#34;)"
+                     target="setLanguage_mubzum">
+            <icview:log text="action=leg:RCCEnglish, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCEnglishDNISTest&#34;)"
+                     target="setLanguage_mubzum">
+            <icview:log text="action=leg:RCCEnglishTest, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASFrenchDNIS&#34;)"
+                     target="setLanguage_fefqeg">
+            <icview:log text="action=leg:ASFrench, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASFrenchDNISTest&#34;)"
+                     target="setLanguage_fefqeg">
+            <icview:log text="action=leg:ASFrenchTest, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASEnglishDNIS&#34;)"
+                     target="setLanguage_mubzum">
+            <icview:log text="action=leg:ASEnglish, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASEnglishDNISTest&#34;)"
+                     target="setLanguage_mubzum">
+            <icview:log text="action=leg:ASEnglishTest, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCBiDNIS&#34;)"
+                     target="collect_xurbih">
+            <icview:log text="action=leg:RCCBi, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingRCCBiDNISTest&#34;)"
+                     target="collect_xurbih">
+            <icview:log text="action=leg:RCCBiTest, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASBiDNIS&#34;)"
+                     target="collect_xurbih">
+            <icview:log text="action=leg:ASBi, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="_ws.gateKeeper.getString(&#34;DNIS&#34;).equals(&#34;incomingASBiDNISTest&#34;)"
+                     target="collect_xurbih">
+            <icview:log text="action=leg:ASBiTest, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition cond="true" target="setLanguage_mubzum">
+            <icview:log text="action=leg:default, type=If, name=, id=if_zuvdil, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+      </state>
+      <state id="script_qejyoz">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=PlayEnglishGreeting, id=script_qejyoz, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/RP1050_GreetingBilingual.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=PlayEnglishGreeting, id=script_qejyoz, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_gawtez"/>
+      </state>
+      <state id="setLanguage_puqtin">
+         <datamodel>
+            <data name="intv_locale" expr="undefined"/>
+            <data name="intv_language" expr="undefined"/>
+            <data name="intv_country" expr="undefined"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SetLanguage, name=SetEnglish, id=setLanguage_puqtin, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+               <icview:param name="locale" expr="'en-US'"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <assign location="intv_locale" expr="'en-US'"/>
+            <assign location="intv_language" expr="intv_locale.substr(0, 2)"/>
+            <assign location="intv_country" expr="intv_locale.substr(3, 2)"/>
+            <vca:config domain="'com.intervoice.scxml.runtime.voice'">
+               <vca:item name="'language'" expr="intv_language"/>
+               <vca:item name="'country'" expr="intv_country"/>
+               <vca:item name="'speaker'" expr="'default'"/>
+            </vca:config>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SetLanguage, name=SetEnglish, id=setLanguage_puqtin, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition target="calc_kipram"/>
+      </state>
+      <state id="subroutineCall_gawtez">
+         <datamodel>
+            <data name="intv_subName"
+                  expr="'/resource/VoiceModule/subroutines/voice/PlayPromptSubroutine.diagram'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=SubroutineCall, name=, id=subroutineCall_gawtez, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml">
+               <icview:param name="promptConfig" expr="_ws.pl"/>
+            </icview:log>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script><![CDATA[
+					
+						if (intv_subName.search(/^\s*\/resource\/[^\/]+\/subroutines\/[^\/]+\/.+$/) >= 0)
+						{
+							var libName = intv_subName.replace(/^\s*\/resource(\/[^\/]+\/subroutines\/[^\/]+\/).+$/, '$1');
+							
+							if (libName != undefined && libName != '') 
+							{
+								var libMatch = 0;
+								
+								for (var i = _ws.intv_librarySize; i > 0; i--) 
+								{
+									var libEntry = _ws.intv_libraryList[i - 1];
+									
+									if (libEntry == libName) 
+									{
+										libMatch = i;
+										break;
+									}
+								}
+								
+								if (libMatch == 0) 
+								{
+									_ws.intv_libraryList[_ws.intv_librarySize++] = libName;
+								}
+							}
+						}
+					
+				]]></scripting:script>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=SubroutineCall, name=, id=subroutineCall_gawtez, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <invoke targettype="x-scxml-component"
+                 src="/VoiceModule/subroutines/voice/PlayPromptSubroutine.scxml">
+            <param name="promptConfig" expr="_ws.pl"/>
+         </invoke>
+         <transition event="subroutineCall_gawtez.invoke.done"/>
+         <transition event="DONE" target="if_jetwuc">
+            <icview:log text="action=leg:DONE, type=SubroutineCall, name=, id=subroutineCall_gawtez, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+         <transition event="ERROR" target="if_jetwuc">
+            <icview:log text="action=leg:ERROR, type=SubroutineCall, name=, id=subroutineCall_gawtez, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+      </state>
+      <state id="calc_kipram">
+         <onentry>
+            <icview:log text="action=entry, type=Calculate, name=SetEnglish, id=calc_kipram, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <assign location="_ws.languageResult" expr="'English'"/>
+            <assign location="_ws.vdnName" expr="'CANE'"/>
+            <assign location="_ws.ivrNotes" expr="_ws.ivrNotes + ' - FRENCH language selected'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Calculate, name=SetEnglish, id=calc_kipram, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true">
+               <icview:result name="_ws.languageResult" expr="_ws.languageResult"/>
+               <icview:result name="_ws.vdnName" expr="_ws.vdnName"/>
+               <icview:result name="_ws.ivrNotes" expr="_ws.ivrNotes"/>
+            </icview:log>
+         </onexit>
+         <transition cond="hasNoError()" target="log_xadgis">
+            <assign location="intv_eventName" expr="undefined"/>
+         </transition>
+      </state>
+      <state id="log_xadgis">
+         <onentry>
+            <icview:log text="action=entry, type=Log, name=, id=log_xadgis, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <log expr="'EVENT - Language set to English'" label="'Default'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Log, name=, id=log_xadgis, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="script_qejyoz">
+            <icview:log text="action=leg:default, type=Log, name=, id=log_xadgis, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+         </transition>
+      </state>
+      <state id="script_cufyal">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_cufyal, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/RP1050_Greeting.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_cufyal, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_gawtez"/>
+      </state>
+      <state id="script_cubpav">
+         <onentry intv:abortonerror="true">
+            <icview:log text="action=entry, type=Script, name=, id=script_cubpav, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <assign location="intv_eventName" expr="undefined"/>
+            <scripting:script srcexpr="'/scripts/js/menus/RP1050_Greeting.js'"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=Script, name=, id=script_cubpav, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition cond="hasNoError()" target="subroutineCall_gawtez"/>
+      </state>
+      <state id="goToBlock_zimcuk">
+         <datamodel>
+            <data name="src" expr="'/applications/voice/VB_ID3350_RCCProductName.scxml'"/>
+         </datamodel>
+         <onentry>
+            <icview:log text="action=entry, type=GotoBlock, name=, id=goToBlock_zimcuk, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"/>
+            <send target="'top'" event="'intv:gotoBlock'" namelist="src"/>
+         </onentry>
+         <onexit>
+            <icview:log text="action=exit, type=GotoBlock, name=, id=goToBlock_zimcuk, document=/RocheCAN/applications/voice/VB_RP1050_LanguageSelection.scxml"
+                        nolog="true"/>
+         </onexit>
+         <transition event="send.successful" target="documentExit"/>
+      </state>
+   </state>
+   <final id="documentExit"/>
+</scxml>

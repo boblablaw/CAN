@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="en-US" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="ID3550_HamiltonDisambig grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_en-US.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+	<one-of>
+		 <item> 
+         	<one-of>
+               <item>c five oh one</item>
+               <item>cobas c five oh one</item>
+               <item>c five oh one</item>
+               <item>hitachi c five oh one</item>
+               <item>cobas c five zero one</item>
+               <item>the c five oh one</item>
+               <item>c five zero one</item>
+               <item>cobas five zero one</item>
+               <item>c</item>
+            </one-of>
+            <tag>CHOICE='c501'</tag>
+         </item>
+        <item>
+            <one-of>
+               <item>p five oh one</item>
+               <item>p seven oh one</item>
+               <item>cobas p five oh one</item>
+               <item>cobas p five zero one</item>
+               <item>p</item>
+            </one-of>
+            <tag>CHOICE='p501701'</tag>
+         </item>
+      </one-of>
+</rule>
+</grammar>

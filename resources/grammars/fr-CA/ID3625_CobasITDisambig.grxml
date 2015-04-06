@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="fr-CA" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="fr-CA" />
+	<meta name="Description" content="ID3625_CobasITDisambig grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_fr-CA.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+	<one-of>
+        <item>
+            <one-of>
+               <item>cobas i t un mille</item>
+               <item>cobas eye tee un mille</item>
+               <item>cobas eye tee mille</item>
+               <item>cobas i t un zéro zéro zéro</item>
+               <item>cobas eye tee un mille</item>
+               <item>cobas eye tee mille</item>
+               <item>cobas eye tee un zéro zéro zéro</item>
+               <item>cobas ité mil</item>
+               <item>cobasité mil</item>
+               <item>cobas ité un zéro zéro zéro</item>
+               <item>cobasité un zéro zéro zéro</item>
+               <item>i t un mille</item>
+               <item>i t un zéro zéro zéro</item>
+               <item>eye tee un mille</item>
+               <item>eye tee mille</item>
+               <item>eye tee un zéro zéro zéro</item>
+               <item>ité mil</item>
+               <item>ité mil</item>
+               <item>ité un zéro zéro zéro</item>
+            </one-of>
+            <tag>CHOICE='cobasit1000'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas i t trois mille</item>
+               <item>i t trois mille</item>
+               <item>cobas eye tee trois mille</item>
+               <item>eye tee trois mille</item>
+               <item>trois mille</item>
+               <item>cobas i t trois zéro zéro</item>
+               <item>i t trois zéro zéro</item>
+               <item>cobas eye tee trois zéro zéro</item>
+               <item>eye tee trois zéro zéro</item>
+               <item>cobas ité trois mille</item>
+               <item>ité trois mille</item>
+               <item>trois mille</item>
+               <item>cobas ité trois zéro zéro</item>
+               <item>ité trois zéro zéro</item>
+               <item>trois zéro zéro</item>
+            </one-of>
+            <tag>CHOICE='cobasit3000'</tag>
+         </item>
+         <item>
+            <one-of>
+               <item>cobas i t middleware</item>
+               <item>cobas eye tee middleware</item>
+               <item>middleware</item>
+               <item>roche middleware</item>
+               <item>cobas i t middleware</item>
+               <item>cobas eye tee middleware</item>
+               <item>i t middleware</item>
+               <item>eye tee middleware</item>
+               <item>cobas ité middleware</item>
+               <item>cobas ité middleware</item>
+               <item>ité middleware</item>
+            </one-of>
+            <tag>CHOICE='cobasitmiddleware'</tag>
+         </item>
+ </one-of>
+</rule>
+</grammar>

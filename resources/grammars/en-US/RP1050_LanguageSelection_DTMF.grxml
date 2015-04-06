@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<grammar xml:lang="en-US" version="1.0" root="root" mode="dtmf">
+<rule id="root" scope="public">
+  <one-of>
+    <item tag="slot1='english'" >
+      <one-of>
+        <item>2</item>
+      </one-of>
+    </item>
+    <item tag="slot1='french'" >
+      <one-of>
+        <item>1</item>
+      </one-of>
+    </item>
+  </one-of>
+</rule>
+</grammar>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="fr-CA" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="en-us" />
+	<meta name="Description" content="ID3650_CobasDisambig grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_fr-CA.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+	
+  <item repeat="0-1">
+  	<one-of>
+  		<item>um</item> <!-- Tuning Update DIR 9/27/12 -->
+  		<item>uh</item> <!-- Tuning Update DIR 9/27/12 -->
+  	</one-of>
+  </item>	
+  
+	<one-of>
+        <item> 
+            <one-of>
+			<item>liste</item>
+			<item>enumerer</item> <!-- Tuning Update DIR 9/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='listthem'</tag>
+		</item>
+       
+        <item>
+            <one-of>
+               <item>c trois un un</item>
+               <item>cobas c trois un un</item>
+               <item>cobas trois un un</item>
+               <item>cobas c trois un un</item>
+               <item>cobas trois un un</item>
+               <item>c trois un un</item>
+               <item>cobas c trois cent onze</item>
+               <item>cobas trois cent onze</item>
+               <item>c trois cent onze</item>
+            </one-of>
+            <tag>CHOICE='c311'</tag>
+         </item>
+       
+         <item>
+            <one-of>
+               <item>c cinq cent un</item>
+               <item>cobas c cinq cent un</item>
+               <item>cinq cent un</item>
+            </one-of>
+            <tag>CHOICE='c501'</tag>
+         </item>
+         
+         <item>
+            <one-of>
+               <item>c cinq cent deux</item>
+               <item>cobas cinq cent deux</item>
+               <item>a cinq zero deux</item>
+               <item>cobas c cinq zero deux</item>
+               <item>c cinq zero deux</item>
+               <item>cinq zero deux</item>
+               <item>cobas c cinq cent deux</item>
+               <item>c cinq cent deux</item>
+               <item>cinq cent deux</item>
+               <item>cobas c cinq zero deux</item>
+               <item>cobas cinq zero deux</item>
+               <item>cinq zero deux</item>
+               <item>c cinq zero deux</item>
+               <item>cobas cinq cent deux</item>
+            </one-of>
+            <tag>CHOICE='c502'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>cobas c sept cent un</item>
+               <item>c sept cent un</item>
+               <item>sept cent un</item>
+               <item>cobas c sept zero un</item>
+               <item>cobas sept zero un</item>
+               <item>sept zero un</item>
+               <item>c sept zero un</item>
+               <item>cobas sept cent un</item>
+            </one-of>
+            <tag>CHOICE='c701'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>c huit zero zero zero</item>
+               <item>c huit mille</item>
+               <item>cobas c huit mille</item>
+               <item>cobas huit mille</item>
+               <item>huit mille</item>
+               <item>cobas c huit zero zero zero</item>
+               <item>c huit zero zero zero</item>
+               <item>huimille</item>
+               <item>hui mille</item>
+               <item>c huimille</item>
+               <item>c hui mille</item>
+               <item>cobas huimille</item>
+               <item>cobas hui mille</item>
+            </one-of>
+            <tag>CHOICE='c8000'</tag>
+         </item>
+         
+        <item>
+            <one-of>
+               <item>c six mille</item>
+               <item>cobas six mille</item>
+               <item>six mille</item>
+               <item>roche six mille</item>
+               <item>cobas six zero zero zero</item>
+               <item>c simille</item>
+               <item>simille</item>
+               <item>si mille</item>
+            </one-of>
+            <tag>CHOICE='cobas6000'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>cobas c un un un</item>
+               <item>cobas un un un</item>
+               <item>un un un</item>
+               <item>cent onze</item>
+               <item>c cent onze</item>
+               <item>cobas c cent onze</item>
+               <item>cobas c cent onze</item>
+               <item>c cent onze</item>
+               <item>cobas cent onze</item>
+               <item>cent onze</item>
+               <item>cobas cent onze</item>
+            </one-of>
+            <tag>CHOICE='c111'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>cobas integra</item>
+               <item>integra</item>
+               <item>roche integra</item>
+               <item>integra sept cent</item>
+               <item>sept cent</item>
+               <item>cobas integra sept cent</item>
+            </one-of>
+            <tag>CHOICE='cobasintegra'</tag>
+         </item>
+       
+        <item> 
+            <one-of>
+               <item>integra quatre cent</item>
+               <item>cobas integra quatre cent</item>
+            </one-of>
+            <tag>CHOICE='integra400'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>integra quatre cent plus</item>
+               <item>cobas integra quatre cent plus</item>
+               <item>quatre cent plus</item>
+            </one-of>
+            <tag>CHOICE='integra400plus'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>cobas integra huit cent</item>
+               <item>integra huit cent</item>
+               <item>cobas huit cent</item>
+               <item>huit cent</item>
+               <item>integra huit cent h b a 1 c</item>
+               <item>huit cent h b a 1 c</item>
+            </one-of>
+            <tag>CHOICE='integra800'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>integra interface</item>
+               <item>cobas integra interface</item>
+            </one-of>
+            <tag>CHOICE='integrainterface'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>p v t</item>
+               <item>p cinq un deux</item>
+               <item>cobas p cinq cent douze</item>
+               <item>p cinq cent douze</item>
+               <item>cinq cent douze</item>
+               <item>cobas p cinq un deux</item>
+               <item>p cinq un deux</item>
+               <item>cobas cinq cent douze</item>
+               <item>cobas cinq un deux</item>
+            </one-of>
+            <tag>CHOICE='cobasp512'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>six un deux</item>
+               <item>p six un deux</item>
+               <item>cobas p six un deux</item>
+               <item>cobas p six cent douze</item>
+               <item>p six cent douze</item>
+               <item>six cent douze</item>
+               <item>cobas p six un deux</item>
+               <item>p six un deux</item>
+               <item>cobas six cent douze</item>
+               <item>cobas six un deux</item>
+            </one-of>
+            <tag>CHOICE='cobasp612'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>cobas pack</item>
+               <item>pack</item>
+               <item>cobas c pack opener</item>
+               <item>debouche reactifs</item>
+            </one-of>
+            <tag>CHOICE='cobaspack'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>cobas c sept cent deux</item>
+               <item>c sept cent deux</item>
+               <item>sept cent deux</item>
+               <item>cobas c sept zero deux</item>
+               <item>cobas sept zero deux</item>
+               <item>sept zero deux</item>
+               <item>c sept zero deux</item>
+               <item>cobas sept cent deux</item>
+               <item>hitachi sept cent deux</item>
+               <item>sept cent deux</item>
+               <item>hitachi sept zero deux</item>
+               <item>sept zero deux</item>
+            </one-of>
+            <tag>CHOICE='c702'</tag>
+         </item>
+		
+        <item>
+            <one-of>
+               <item>p trois un deux</item>
+               <item>cobas p trois un deux</item>
+               <item>cobas p trois cent douze</item>
+               <item>p trois cent douze</item>
+               <item>p trois un deux</item>
+               <item>cobas p trois un deux</item>
+               <item>cobas trois cent douze</item>
+               <item>cobas trois un deux</item>
+            </one-of>
+            <tag>CHOICE='p312'</tag>
+         </item> 
+		
+		<item> 
+            <one-of>
+			<item>mira</item>
+			<item>mira plus</item>
+			<item>cobas mira</item>
+			<item>cobas mira plus</item>
+            </one-of>
+          
+			<tag>CHOICE='cobasmira'</tag>
+		</item>	
+       
+        <item> 
+            <one-of>
+			<item>cobas ampliprep</item>
+			<item>ampliprep</item>
+			<item>ampliprep taqman</item> <!-- Tuning Update DIR 9/27/12 -->
+			<item>roche ampliprep</item> <!-- Tuning Update DIR 9/27/12 -->
+	        </one-of>
+          
+			<tag>CHOICE='cobasampliprep'</tag>
+		</item>
+       
+        <item> 
+            <one-of>
+			<item>cobas amplicor</item>
+			<item>amplicor</item>
+			<item>roche amplicor</item> <!-- Tuning Update DIR 9/27/12 -->
+            </one-of>
+          
+			<tag>CHOICE='cobasamplicor'</tag>
+		</item>
+       
+        <item>
+            <one-of>
+               <item>quatre mille huit cent</item>
+               <item>cobas quatre mille huit cent</item>
+               <item>cobas quatre huit zero</item>
+               <item>cobas z quatre cent quatre vingt</item>
+               <item>cobas quatre cent quatre vingt</item>
+               <item>quatre cent quatre vingt</item>
+               <item>quatre huit zero</item>
+               <item>cobas quatre huit zero</item>
+               <item>cobas z quatre huit zero</item>
+            </one-of>
+            <tag>CHOICE='cobas4800'</tag>
+         </item>
+       
+        <item>
+            <one-of>
+               <item>cobas i t</item>
+               <item>cobas i t un mille</item>
+               <item>cobas i t un zero zero zero</item>
+            </one-of>
+            <tag>CHOICE='cobasit1000'</tag>
+         </item>
+		
+		<item> 
+            <one-of>
+			<item>taqman</item>
+            </one-of>
+          
+			<tag>CHOICE='taqman'</tag>
+		</item> 
+		
+		<item>
+            <one-of>
+               <item>cobas academy</item>
+               <item>academy</item>
+               <item>roche academy</item>
+            </one-of>
+            <tag>CHOICE='cobasacademy'</tag>
+         </item>
+         
+         <item>
+            <one-of>
+               <item>cobas huit mille cent</item>
+               <item>huit mille cent</item>
+               <item>cobas huit un zero zero</item>
+               <item>cobas huit un cent cent</item>
+               <item>huit un cent cent</item>
+               <item>huit un zero zero</item>
+            </one-of>
+            <tag>CHOICE='cobas8100'</tag>
+         </item>
+         
+        <item>
+            <one-of>
+               <item>cobas i t trois mille</item>
+               <item>i t trois mille</item>
+               <item>trois mille</item>
+               <item>cobas i t trois zero zero</item>
+               <item>i t trois zero zero</item>
+               <item>trois zero zero</item>
+            </one-of>
+            <tag>CHOICE='cobasit3000'</tag>
+         </item>
+   
+         <item>
+            <one-of>
+               <item>cobas connect deux</item>
+               <item>connect deux</item>
+            </one-of>
+            <tag>CHOICE='connect2'</tag>
+         </item>
+         
+         <item>
+            <one-of>
+               <item>cobas link</item>
+               <item>link</item>
+            </one-of>
+            <tag>CHOICE='cobaslink'</tag>
+         </item>
+         
+         <item>
+            <one-of>
+               <item>cobas c sept cent deux</item>
+               <item>c sept cent deux</item>
+               <item>sept cent deux</item>
+               <item>cobas c sept zero deux</item>
+               <item>cobas sept zero deux</item>
+               <item>sept zero deux</item>
+               <item>c sept zero deux</item>
+               <item>cobas sept cent deux</item>
+               <item>hitachi sept cent deux</item>
+               <item>sept cent deux</item>
+               <item>hitachi sept zero deux</item>
+               <item>sept zero deux</item>
+            </one-of>
+            <tag>CHOICE='c702'</tag>
+         </item>
+         
+          <item>
+            <one-of>
+               <item>c sept un un</item>
+               <item>c sept cent onze</item>
+               <item>cobas sept un un</item>
+               <item>cobas sept cent onze</item>
+            </one-of>
+            <tag>CHOICE='c711'</tag>
+         </item>
+ </one-of>
+</rule>
+
+</grammar>

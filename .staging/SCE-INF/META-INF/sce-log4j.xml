@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd"
+[
+	<!ENTITY custom-appenders SYSTEM "custom-log4j-appenders.txt">
+	<!ENTITY custom-config SYSTEM "custom-log4j-config.txt">
+]
+>
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<!--******************************   APPENDER CONFIGURATIONS   ***********************************-->
+	<!--******************************   APPENDER CONFIGURATIONS   ***********************************-->
+	<!--******************************   APPENDER CONFIGURATIONS   ***********************************-->
+	<!--******************************   APPENDER CONFIGURATIONS   ***********************************-->
+
+	<!--  This appender required by Control Center - DO NOT REMOVE -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyyMMdd HH:mm:ss:SSS} %p [RID=%X{com.intervoice.scxml.runtime.reference.id}] [SID=%X{com.intervoice.scxml.runtime.session.id}]-%X{com.intervoice.scxml.runtime.thread.id} %c [%t] %m%n" />
+		</layout>
+	</appender>
+
+	<!--  This appender required by Control Center - DO NOT REMOVE -->
+	<appender name="StateControl-System" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${com.intervoice.statecontrol.logging}/${context.name}/StateControl-System.log"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="MaxFileSize" value="10MB"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyyMMdd HH:mm:ss:SSS} %p [RID=%X{com.intervoice.scxml.runtime.reference.id}] [SID=%X{com.intervoice.scxml.runtime.session.id}]-%X{com.intervoice.scxml.runtime.thread.id} %c [%t] %m%n" />
+		</layout>
+	</appender>
+
+	<!--  This appender ensures that System.log entries are reported to Control Center -->
+	<appender name="StateControl-CAS" class="com.intervoice.scxml.runtime.logging.CASAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyyMMdd HH:mm:ss:SSS} Application=%X{com.intervoice.scxml.runtime.application.name} %c [%t] %m%n" />
+		</layout>
+	</appender>
+
+	<!--  This appender required by Control Center - DO NOT REMOVE -->
+	<appender name="StateControl-User" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${com.intervoice.statecontrol.logging}/${context.name}/StateControl-User.log"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="MaxFileSize" value="10MB"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyyMMdd HH:mm:ss:SSS} %p [RID=%X{com.intervoice.scxml.runtime.reference.id}] [SID=%X{com.intervoice.scxml.runtime.session.id}]-%X{com.intervoice.scxml.runtime.thread.id} %c [%t] %m%n" />
+		</layout>
+	</appender>
+
+	<!--  This appender required by Control Center - DO NOT REMOVE -->
+	<appender name="StateControl-Action" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${com.intervoice.statecontrol.logging}/${context.name}/StateControl-Action.log"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="MaxFileSize" value="10MB"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyyMMdd HH:mm:ss:SSS} %p [RID=%X{com.intervoice.scxml.runtime.reference.id}] [SID=%X{com.intervoice.scxml.runtime.session.id}]-%X{com.intervoice.scxml.runtime.thread.id} %c [%t] %m%n" />
+		</layout>
+	</appender>
+
+	<!--  This appender required by Control Center - DO NOT REMOVE -->
+	<appender name="StateControl-SCView" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${com.intervoice.statecontrol.logging}/${context.name}/StateControl-SCView.log"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="MaxFileSize" value="10MB"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyyMMdd HH:mm:ss:SSS} %p [RID=%X{com.intervoice.scxml.runtime.reference.id}] [SID=%X{com.intervoice.scxml.runtime.session.id}]-%X{com.intervoice.scxml.runtime.thread.id} %c [%t] %m%n" />
+		</layout>
+	</appender>
+
+	<!--  This appender required by Control Center - DO NOT REMOVE -->
+	<appender name="StateControl-ICView" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${com.intervoice.statecontrol.logging}/${context.name}/StateControl-ICView.log"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="MaxFileSize" value="10MB"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyyMMdd HH:mm:ss:SSS} %p [RID=%X{com.intervoice.scxml.runtime.reference.id}] [SID=%X{com.intervoice.scxml.runtime.session.id}]-%X{com.intervoice.scxml.runtime.thread.id} %c [%t] %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="ICViewer" class="com.intervoice.scxml.runtime.logging.icviewer.ICViewerAppender">
+	</appender>	
+
+	<!-- Include user's custom configuration here -->
+	&custom-appenders;
+	&custom-config;
+
+	<!--******************************   LOGGER CONFIGURATIONS   ***********************************-->
+	<!--******************************   LOGGER CONFIGURATIONS   ***********************************-->
+	<!--******************************   LOGGER CONFIGURATIONS   ***********************************-->
+	<!--******************************   LOGGER CONFIGURATIONS   ***********************************-->
+
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.User" additivity="false">
+		<level value="trace"/>
+		<appender-ref ref="StateControl-User"/>
+		<!-- Comment the following CONSOLE appender-ref prior to entering production.  Suggest only use for debugging -->  
+		<!-- <appender-ref ref="CONSOLE" /> -->
+	</logger>
+
+	<!--  This log surfaced in Control Center (IC Default user logger) - DO NOT REMOVE -->
+	<logger name="StateControl.User.Default" additivity="false">
+		<level value="trace"/>
+		<appender-ref ref="StateControl-User"/>
+		<!-- Comment the following CONSOLE appender-ref prior to entering production.  Suggest only use for debugging -->  
+		<!-- <appender-ref ref="CONSOLE" /> -->
+	</logger>
+
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.Action" additivity="false">
+		<level value="warn"/>
+		<appender-ref ref="StateControl-Action"/>
+		<!-- Comment the following CONSOLE appender-ref prior to entering production.  Suggest only use for debugging -->  
+		<!-- <appender-ref ref="CONSOLE" /> -->
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.SCView" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="StateControl-SCView"/>
+		<!-- Comment the following CONSOLE appender-ref prior to entering production.  Suggest only use for debugging -->  
+		<!-- <appender-ref ref="CONSOLE" /> -->
+	</logger>
+		
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.ICView" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="StateControl-ICView"/>
+		<appender-ref ref="ICViewer"/>
+		<!-- Comment the following CONSOLE appender-ref prior to entering production.  Suggest only use for debugging -->  
+		<!-- <appender-ref ref="CONSOLE" /> -->
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.runtime">
+		<level value="warn"/>
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.session">
+		<level value="warn"/>
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.taskQ">
+		<level value="warn"/>
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.document">
+		<level value="warn"/>
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.web">
+		<level value="warn"/>
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.render">
+		<level value="warn"/>
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.expressionLanguage">
+		<level value="warn"/>
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.config">
+		<level value="warn"/>
+	</logger>
+	
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<logger name="StateControl.System.external">
+		<level value="warn"/>
+	</logger>
+
+	<!-- This logger put in place to allow user to only see warn messages from Log4J loggers in use by
+	     Tomcat, Spring, and other loggers beginning with the name "org" such as org.springframework or
+	     org.apache.
+	 -->
+	<logger name="org">
+		<level value="warn"/>
+	</logger>
+
+	<!--  This log surfaced in Control Center - DO NOT REMOVE -->
+	<root>
+		<level value="warn"/>
+		<appender-ref ref="StateControl-System"/>
+		<appender-ref ref="StateControl-CAS"/>
+		<!-- Comment the following CONSOLE appender-ref prior to entering production.  Suggest only use for debugging -->  
+		<!-- <appender-ref ref="CONSOLE" /> -->
+	</root>
+</log4j:configuration>

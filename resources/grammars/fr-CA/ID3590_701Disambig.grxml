@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="fr-CA" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="fr-CA" />
+	<meta name="Description" content="ID3590_701Disambig grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_fr-CA.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+	<one-of>
+		<item>
+            <one-of>
+               <item>cobas c sept cent un</item>
+               <item>c sept cent un</item>
+               <item>cobas c sept zéro un</item>
+               <item>c sept zéro un</item>
+               <item>cobas c sept cent un</item>
+               <item>c</item>
+            </one-of>
+            <tag>CHOICE='c701'</tag>
+        </item>
+        <item>
+            <one-of>
+               <item>cobas p sept cent un</item>
+               <item>p sept cent un</item>
+               <item>cobas p sept zéro un</item>
+               <item>p sept zéro un</item>
+               <item>cobas p sept cent un</item>
+               <item>p</item>
+            </one-of>
+            <tag>CHOICE='p501701'</tag>
+         </item>
+    	<item>
+            <one-of>
+               <item>cobas u sept cent un</item>
+               <item>u sept cent un</item>
+               <item>cobas u sept zéro un</item>
+               <item>u sept zéro un</item>
+               <item>microscopie urinaire</item>
+               <item>microsocopie</item>
+               <item>sediment urinaire</item>
+               <item>urinaire</item>
+               <item>urisys</item>
+               <item>u</item>
+            </one-of>
+            <tag>CHOICE='urisys701'</tag>
+        </item>    
+ 	</one-of>
+</rule>
+</grammar>

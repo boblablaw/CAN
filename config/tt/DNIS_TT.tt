@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domains xmlns="http://www.intervoice.com/schema/property/3.0">
+  <audit savedby="IC Translate Table" timestamp="Fri Jun 06 10:06:38 EDT 2014" version="3.0.0.0"/>
+  <domain allow-add="false" displayable="true" domain-type="TT" id="" preprocessor="application/ecmascript">
+    <description value="IC Translate Table"/>
+    <display-name value="DNIS.tt"/>
+    <property key="pbxmenuenglish">
+      <app-value value="'10398'"/>
+      <description value="Transfer PBX Menu English"/>
+    </property>
+    <property key="pbxmenufrench">
+      <app-value value="'10397'"/>
+      <description value="Transfer PBX Menu French"/>
+    </property>
+    <property key="cbscfrench">
+      <app-value value="'88618230'"/>
+      <description value="Transfer CBSC French VDN"/>
+    </property>
+    <property key="cbscenglish">
+      <app-value value="'88618231'"/>
+      <description value="Transfer CBSC English VDN"/>
+    </property>
+    <property key="rasmailboxenglish">
+      <app-value value="'11545'"/>
+      <description value="Transfer RAS English VDN"/>
+    </property>
+    <property key="rasmailboxfrench">
+      <app-value value="'11546'"/>
+      <description value="Transfer RAS French VDN"/>
+    </property>
+    <property key="serviceopsparts">
+      <app-value value="'88612021'"/>
+      <description value="Transfer ServiceOps Parts VDN"/>
+    </property>
+    <property key="serviceopsdispatch">
+      <app-value value="'88612020'"/>
+      <description value="Transfer ServiceOps Dispatch VDN"/>
+    </property>
+    <property key="bloodscreeningenglish">
+      <app-value value="'30070'"/>
+      <description value="Transfer Blood Screening VDN (Skill 1007)"/>
+    </property>
+    <property key="bloodscreeningfrench">
+      <app-value value="'30078'"/>
+      <description value="Transfer Blood Screening VDN (1007)"/>
+    </property>
+    <property key="39204">
+      <app-value value="'incomingRCCFrenchDNIS'"/>
+      <description value="Incoming RCC French DNIS"/>
+    </property>
+    <property key="39203">
+      <app-value value="'incomingRCCBiDNIS'"/>
+      <description value="Incoming RCC Bilingual DNIS"/>
+    </property>
+    <property key="10399">
+      <app-value value="'incomingRCCEnglishDNIS'"/>
+      <description value="Incoming RCC English DNIS"/>
+    </property>
+    <property key="39209">
+      <app-value value="'incomingRCCEnglishDNIS'"/>
+      <description value="Incoming RCC English DNIS"/>
+    </property>
+    <property key="10389">
+      <app-value value="'incomingRCCFrenchDNISTest'"/>
+      <description value="Incoming RCC French DNIS Test"/>
+    </property>
+    <property key="10390">
+      <app-value value="'incomingRCCBiDNISTest'"/>
+      <description value="Incoming RCC Bilingual DNIS Test"/>
+    </property>
+    <property key="10391">
+      <app-value value="'incomingRCCEnglishDNISTest'"/>
+      <description value="Incoming RCC English DNIS Test"/>
+    </property>
+    <property key="39206">
+      <app-value value="'incomingASFrenchDNIS'"/>
+      <description value="Incoming Applied Science French DNIS"/>
+    </property>
+    <property key="39205">
+      <app-value value="'incomingASBiDNIS'"/>
+      <description value="Incoming Applied Science Bilingual DNIS"/>
+    </property>
+    <property key="10938">
+      <app-value value="'incomingASEnglishDNIS'"/>
+      <description value="Incoming Applied Science English DNIS"/>
+    </property>
+    <property key="39210">
+      <app-value value="'incomingASEnglishDNIS'"/>
+      <description value="Incoming Applied Science English DNIS"/>
+    </property>
+    <property key="10386">
+      <app-value value="'incomingASFrenchDNISTest'"/>
+      <description value="Incoming Applied Science French DNIS Test"/>
+    </property>
+    <property key="10387">
+      <app-value value="'incomingASBiDNISTest'"/>
+      <description value="Incoming Applied Science Bilingual DNIS Test"/>
+    </property>
+    <property key="10388">
+      <app-value value="'incomingASEnglishDNISTest'"/>
+      <description value="Incoming Applied Science English DNIS Test"/>
+    </property>
+    <property key="10027">
+      <app-value value="'incomingRCCBiDNISTest'"/>
+      <description value="Side A Test"/>
+    </property>
+    <property key="10037">
+      <app-value value="'incomingRCCBiDNISTest'"/>
+      <description value="Side B Test"/>
+    </property>
+    <property key="testtransferflag">
+      <app-value value="'F'"/>
+      <description value="TestTransferFlag"/>
+    </property>
+    <property key="routebypassflag">
+      <app-value value="'F'"/>
+      <description value="VDN Bypass"/>
+    </property>
+    <property key="routebypassvdn">
+      <app-value value="'13825'"/>
+      <description value="Route Bypass VDN"/>
+    </property>
+    <property key="operator">
+      <app-value value="'30080'"/>
+      <description value="Operator"/>
+    </property>
+    <property key="operatorflag">
+      <app-value value="'F'"/>
+      <description value="Operator Active Flag"/>
+    </property>
+    <property key="10376">
+      <app-value value="'incomingFrenchTissue'"/>
+      <description value="Incoming French Tissue Test"/>
+    </property>
+    <property key="11544">
+      <app-value value="'incomingFrenchTissue'"/>
+      <description value="Incoming French Tissue"/>
+    </property>
+  </domain>
+</domains>

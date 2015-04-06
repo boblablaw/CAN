@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="fr-CA" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="fr-CA" />
+	<meta name="Description" content="ID3580_601Disambig grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_fr-CA.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+	<one-of>
+		<item>
+            <one-of>
+               <item>e six cent un</item>
+               <item>cobas e six cent un</item>
+               <item>e six cent un</item>
+               <item>e six zéro un</item>
+               <item>cobas e six cent un</item>
+               <item>cobas e six zéro un</item>
+               <item>cobas e six cent un</item>
+               <item>e six cent un</item>
+               <item>e six cent un</item>
+               <item>cobas e six zéro un</item>
+               <item>cobas e six zéro un</item>
+               <item>e six zéro un</item>
+               <item>cobas e six cent un</item>
+               <item>e</item>
+               <item>elecsys</item>
+            </one-of>
+            <tag>CHOICE='e601'</tag>
+        </item>
+        <item>
+            <one-of>
+               <item>cobas u six cent un</item>
+               <item>u six zéro un</item>
+               <item>urisys six zéro un</item>
+               <item>cobas u six zéro un</item>
+               <item>cobas u six zéro un</item>
+               <item>u six cent un</item>
+               <item>urisys six cent un</item>
+               <item>cobas u six cent un</item>
+               <item>cobas urisys six cent un</item>
+               <item>u</item>
+               <item>urisys</item>
+            </one-of>
+            <tag>CHOICE='urisys601'</tag>
+         </item>
+	</one-of>
+</rule>
+</grammar>

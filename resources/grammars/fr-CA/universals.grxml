@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<grammar mode='voice' root='root' version='1.0'
+xml:lang='fr-CA' xmlns='http://www.w3.org/2001/06/grammar' tag-format='semantics/1.0'>
+	
+	<rule id="root" scope="public">
+		<item>
+			<one-of>
+				<item><ruleref uri="#help"/></item>
+				<item><ruleref uri="#representative"/></item>
+				<item><ruleref uri="#main_menu"/></item>
+				<item><ruleref uri="#repeat"/></item>
+				<item><ruleref uri="#goodbye"/></item>
+				<item><ruleref uri="#dispatch"/></item>
+				<item><ruleref uri="#parts"/></item>
+				<item><ruleref uri="#bloodscreening"/></item>
+				<item><ruleref uri="#operator"/></item>
+			</one-of>
+
+			<tag>
+				return ($return)
+			</tag>
+		</item>
+	</rule>
+	
+	<rule id="help" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+				<item>help</item>
+			</one-of>
+			<tag>out.GLOBAL='help'</tag>
+		</item>
+	</rule>
+	
+	<rule id="main_menu" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+				<item>retour au menu principal</item>
+				<item>retourne au menu pricipal</item>
+				<item>ramene moi au menu principal</item>
+				<item>revenir au menu principal</item>
+				<item>retourner au menu principal</item>
+				<item>menu principal</item>
+			</one-of>
+			<tag>out.GLOBAL='main_menu'</tag>
+		</item>
+	</rule>
+	
+	<rule id="start_over" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+				<item>recommencer</item>
+				<item>nouvelle recherche</item>
+				<item>nouveau</item>
+				<item>nouvelle</item>
+				<item>commencer une nouvelle recherche</item>
+				<item>une nouvelle recherche</item>
+			</one-of>
+			<tag>out.GLOBAL='start_over'</tag>
+		</item>
+	</rule>
+	
+	<rule id="goodbye" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+				<item>au revoir</item>
+				<item>bye</item>
+				<item>c'est tout</item>
+				<item>ciao</item>		
+			</one-of>
+			<tag>out.GLOBAL='goodbye'</tag>
+		</item>
+	</rule>
+	
+	<rule id="repeat" scope="public">
+		<item>
+			<item repeat="0-1"><ruleref uri="#umUh"/></item>
+			<one-of>
+				<item>répéter</item>
+				<item>répéter tout</item>
+			</one-of>
+			<tag>out.GLOBAL='repeat'</tag>
+		</item>
+	</rule>
+	
+	<rule id="representative" scope="public">
+		<item> 
+			<item>
+				<item repeat="0-1"><ruleref uri="#umUh"/></item>
+				<one-of>
+					<!--
+					<item ><item repeat="0-1"><ruleref uri = "#IWantAn"/></item>agent</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWant"/></item>service a la clientele</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWant"/></item>support a la clientele</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>representant</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>representant du service a la clientèle</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>representant au service a la clientèle</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>agent du service a la clientèle</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>agent au service a la clientèle</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>specialiste</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>specialiste du support</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantthe"/></item>operateur</item>
+					<item ><ruleref uri = "#IWant"/>quelqu'un</item>
+					<item ><ruleref uri = "#IWantA"/>personne</item>
+					<item ><ruleref uri = "#IWantA"/>vraie personne</item>
+					-->
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>agent</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>représentant</item>
+					<item ><item repeat="0-1"><ruleref uri = "#IWantA"/></item>spécialiste</item>
+					<item ><item repeat="0-1" weight="0.05"><ruleref uri = "#IWantA"/></item>t s s</item> <!-- tuning 2014 -->
+				</one-of>
+				<item repeat="0-1"><ruleref uri="#postphrase"/></item>
+			</item>
+			<tag>out.GLOBAL='representative'</tag>
+	    </item>
+	</rule>
+	
+	<rule id="dispatch" scope="public">
+		<item> 
+			<item>
+				<item repeat="0-1"><ruleref uri="#umUh"/></item>
+				<one-of>
+					<item>dispatch</item>
+				</one-of>
+				<item repeat="0-1"><ruleref uri="#postphrase"/></item>
+			</item>
+			<tag>out.GLOBAL='dispatch'</tag>
+	    </item>
+	</rule>
+	
+	<rule id="parts" scope="public">
+		<item> 
+			<item>
+				<item repeat="0-1"><ruleref uri="#umUh"/></item>
+				<one-of>
+					<item>parts</item>
+					<item>service parts</item>
+					<item>pièces</item>
+				</one-of>
+				<item repeat="0-1"><ruleref uri="#postphrase"/></item>
+			</item>
+			<tag>out.GLOBAL='parts'</tag>
+	    </item>
+	</rule>
+	
+	<rule id="bloodscreening" scope="public">
+		<item> 
+			<item>
+				<item repeat="0-1"><ruleref uri="#umUh"/></item>
+				<one-of>
+					<item>dépistage sanguin</item>
+					<item>sanguin</item>
+					<item>écran de sang</item>
+				</one-of>
+				<item repeat="0-1"><ruleref uri="#postphrase"/></item>
+			</item>
+			<tag>out.GLOBAL='bloodscreening'</tag>
+	    </item>
+	</rule>
+	
+	<rule id="operator" scope="public">
+		<item> 
+			<item>
+				<item repeat="0-1"><ruleref uri="#umUh"/></item>
+				<item repeat="0-1"><ruleref uri="#postphrase"/></item>
+			</item>
+			<tag>out.GLOBAL='operator'</tag>
+	    </item>
+	</rule>
+	
+	<rule id="IWantA" scope="public">
+		<one-of>
+			<item>j'aimerais parler a </item>
+			<item>j'aimerais parler avec</item>
+			<item>est-ce que je pourrais parler a</item>
+			<item>est-ce que je pourrais parler avec</item>
+			<item>est-ce que je peux parler a</item>
+			<item>est-ce que je peux parler avec</item>
+			<item>est-ce que j'pourrais parler a</item>
+			<item>est-ce que j'pourrais parler avec</item>
+			<item>est-ce que j'peux parler a</item>
+			<item>est-ce que j'peux parler avec</item>
+			<item>peux-tu parler a</item>
+			<item>peux-tu parler avec</item>
+			<item>j'peux-tu parler a</item>
+			<item>j'peux-tu parler avec</item>
+			<item>puis-je parler a</item>
+			<item>puis-je parler avec</item>
+			<item>j'aimerais parler a</item>
+			<item>j'aimerais parler avec</item>
+			<item>j'veux parler a</item>
+			<item>j'veux parler avec</item>
+			<item>je veux parler a</item>
+			<item>je veux parler avec</item>
+			<item>j'voudrais parler a</item>
+			<item>j'voudrais parler avec</item>
+			<item>j'ai besoin de parler a</item>
+			<item>j'ai besoin de parler avec</item>
+			<item>j'aurais besoin de parler a</item>
+			<item>j'aurais besoin de parler avec</item>
+			<item>il faut que je parle a</item>
+			<item>il faut que je parle avec</item>
+			<item>faut que je parle a</item>
+			<item>faut que je parle avec</item>
+			<item>il faut que j'parle a</item>
+			<item>il faut que j'parle avec</item>
+			<item>faut que j'parle a</item>
+			<item>faut que j'parle avec</item>
+		</one-of>
+	</rule>
+	
+	<rule id="IWant" scope="public">
+		<one-of>
+			<item>can i talk to</item>
+		</one-of>
+	</rule>
+	
+	<rule id="IWantAn" scope="public">
+	  <one-of>
+	    <item>i want to talk to an</item>
+	  </one-of>
+	</rule>
+	<rule id="IWantthe" scope="public">
+	  <one-of>
+	    <item>i want to talk to an</item>
+	  </one-of>
+	</rule>
+	
+	<rule id="postphrase" scope="public">
+	  <one-of>
+	    <item >please</item>
+	  </one-of>
+	</rule>
+	
+		<rule id="umUh" scope="public">
+		<one-of>
+			<item>uh</item>
+			<item>um</item>
+			<item>ah</item>
+		</one-of>
+	</rule>
+	
+</grammar>

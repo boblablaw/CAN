@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<grammar version="1.0" 
+	xmlns="http://www.w3.org/2001/06/grammar" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.w3.org/2001/06/grammar http://www.w3.org/TR/speech-grammar/grammar.xsd" 
+    tag-format='swi-semantics/1.0'
+	xml:lang="fr-CA" mode="voice" root="root">
+	<!-- ############################################## -->
+	<meta name="Parameters" content="" />
+	<meta name="ASR_Engine" content="Nuance" />
+	<meta name="Language" content="fr-CA" />
+	<meta name="Description" content="ID3570_501Disambig grammar" />
+	<meta name="Usage_Notes" content="" />
+	<meta name="Associated_Files" content="" />
+	<meta name="ASR_Version" content="9.x" />
+	<!-- ############################################## -->
+
+<lexicon uri="user_dictionary_fr-CA.xml?SWI.type=backup"/>
+<rule id="root" scope="public">
+	<one-of>
+		 <item> 
+         	<one-of>
+               <item>c cinq cent un</item>
+               <item>cobas c cinq cent un</item>
+               <item>cobas c cinq zéro un</item>
+               <item>c cinq zéro un</item>
+               <item>c</item>
+            </one-of>
+            <tag>CHOICE='c501'</tag>
+         </item>
+        <item>
+            <one-of>
+               <item>p cinq cent un</item>
+               <item>cobas p cinq cent un</item>
+               <item>cobas p cinq zéro un</item>
+               <item>p cinq cent un</item>
+               <item>cobas p cinq cent un</item>
+               <item>cobas p cinq zéro un</item>
+               <item>p cinq zéro un</item>
+               <item>p</item>
+            </one-of>
+            <tag>CHOICE='p501701'</tag>
+         </item>
+      </one-of>
+</rule>
+</grammar>
